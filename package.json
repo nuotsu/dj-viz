@@ -1,0 +1,14 @@
+{
+	"name": "audio-viz",
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/kit": "next",
+		"svelte": "^3.44.0"
+	}
+}
