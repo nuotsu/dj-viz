@@ -1,5 +1,5 @@
 <button on:click={() => { enabled = !enabled }}>
-	{enabled ? 'stop' : 'start'}
+	{enabled ? '⏸' : '▶️'}
 </button>
 
 {#if enabled}
@@ -13,13 +13,14 @@
 {/if}
 
 <script>
+	import { dev } from '$app/env'
 	import AudioCanvas from '$/lib/AudioCanvas.svelte'
 
-	let enabled = false
+	let enabled = dev
 
 	async function getMedia() {
-		if (!('navigator' in window)) return null
-
-		return navigator.mediaDevices.getUserMedia({ audio: true })
+		if ('navigator' in window) {
+			return navigator.mediaDevices.getUserMedia({ audio: true })
+		}
 	}
 </script>
