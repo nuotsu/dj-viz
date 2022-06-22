@@ -15,7 +15,7 @@
 <script>
 	import AudioCanvas from '$/lib/AudioCanvas.svelte'
 
-	let enabled = true
+	let enabled = false
 
 	async function getMedia() {
 		if (!('navigator' in window)) return null

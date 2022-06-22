@@ -1,4 +1,4 @@
-<audio bind:this={audio} controls autoplay />
+<audio bind:this={audio} autoplay />
 
 <Frequency {analyzer} />
 <TimeDomain {analyzer} />
