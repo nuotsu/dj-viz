@@ -83,7 +83,7 @@
 
 	export let analyzer
 
-	let preset = 'viz'
+	let preset = 'default'
 	let { spokes, offset, speed, min, max, invert } = presets[preset]
 
 	let bars = [], frame
