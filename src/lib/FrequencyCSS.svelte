@@ -75,6 +75,7 @@
 </style>
 
 <script>
+	import { dev } from '$app/env'
 	import { onMount } from 'svelte'
 	import Presets, { presets } from './Presets.svelte'
 	import Turntable, { disc, stopTurntable, resumeTurntable } from './Turntable.svelte'
@@ -83,8 +84,8 @@
 
 	export let analyzer
 
-	let preset = 'default'
-	let { spokes, offset, speed, min, max, invert } = presets[preset]
+	let preset = 'viz'
+	let { spokes, offset, speed, min, max, invert } = presets[!dev ? 'default' : preset]
 
 	let bars = [], frame
 
