@@ -1,11 +1,9 @@
 <audio bind:this={audio} autoplay />
 
-<Frequency {analyzer} />
-<TimeDomain {analyzer} />
+<FrequencyCSS {analyzer} />
 
 <script>
-	import Frequency from './Frequency.svelte'
-	import TimeDomain from './TimeDomain.svelte'
+	import FrequencyCSS from './FrequencyCSS.svelte'
 
 	export let stream
 

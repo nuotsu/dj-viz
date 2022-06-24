@@ -51,7 +51,6 @@
 
 	onMount(() => {
 		loop()
-
 		return () => cancelAnimationFrame(frame)
 	})
 </script>
