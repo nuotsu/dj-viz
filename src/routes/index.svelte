@@ -1,22 +1,27 @@
-<button on:click={() => { enabled = !enabled }}>
-	{enabled ? '⏸' : '▶️'}
-</button>
+<nav>
+	<button on:click={() => { power = !power }}>
+		🔌
+	</button>
 
-{#if enabled}
+	<Fullscreen />
+</nav>
+
+{#if power}
 	{#await getMedia()}
-		<p>Asking...</p>
+		Asking...
 	{:then stream}
 		<AudioCanvas {stream} />
-	{:catch err}
-		<p>Denied! {console.error(err)}</p>
+	{:catch}
+		🙅‍♂️
 	{/await}
 {/if}
 
 <script>
 	import { dev } from '$app/env'
+	import Fullscreen from '$/lib/Fullscreen.svelte'
 	import AudioCanvas from '$/lib/AudioCanvas.svelte'
 
-	let enabled = dev
+	let power = dev
 
 	async function getMedia() {
 		if ('navigator' in window) {

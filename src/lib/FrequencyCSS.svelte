@@ -1,44 +1,49 @@
-<figure
-	style:--disc="{disc.value}deg"
->
-	{#each bars as bar, i}
-		<div
-			style:--dir={invert ? 'bottom' : 'top'}
-			style:--min="{min}%"
-			style:--percentage="{(bar / 256 * (max - min)) + min}%"
-			style:--angle="{i / bars.length}turn"
-		/>
-	{/each}
-</figure>
+<Presets bind:value={preset} />
 
 <Turntable {...disc}
 	bind:value={disc.value}
-	on:mousedown={() => disc.active = true}
-	on:mouseup={() => disc.active = false}
-/>
+	on:mousedown={stopTurntable}
+	on:mouseup={resumeTurntable}
+>
+	<figure style:--disc="{disc.value}deg">
+		{#each bars as bar, i}
+			<div
+				style:--dir={invert ? 'bottom' : 'top'}
+				style:--min="{min}%"
+				style:--percentage="{(bar / 256 * (max - min)) + min}%"
+				style:--angle="{i / bars.length}turn"
+			/>
+		{/each}
+		</figure>
+</Turntable>
+
+<Spokes bind:value={spokes} />
 
 <label>
-	<input bind:checked={invert} type="checkbox" />
-	invert
+	<input bind:value={offset} type="range" min={0} max={SPOKES_MAX} />
+	offset({offset})
 </label>
 
 <label>
-	<input bind:value={threshold} type="range" min={0} max={1} step={0.01} />
-	{threshold}
+	<input bind:value={speed} type="range" min={0} max={10} step={0.1} />
+	⏱({speed})
 </label>
 
 <label>
 	<input bind:value={min} type="range" min={0} max={99} />
-	{min}
+	{invert ? 'outer' : 'inner'}
 </label>
 
 <label>
 	<input bind:value={max} type="range" min={1} max={100} />
-	{max}
+	{invert ? 'inner' : 'outer'}
 </label>
+
+<Shortcut key="i" bind:checked={invert} />
 
 <style>
 	figure {
+		pointer-events: none;
 		display: grid;
 		grid-template-rows: repeat(2, 1fr);
 		place-content: start center;
@@ -55,8 +60,8 @@
 		background: linear-gradient(to var(--dir),
 			transparent,
 			transparent var(--min),
-			#000 var(--min),
-			#000 var(--percentage),
+			currentColor var(--min),
+			currentColor var(--percentage),
 			transparent var(--percentage)
 		);
 		transform-origin: bottom;
@@ -71,38 +76,39 @@
 
 <script>
 	import { onMount } from 'svelte'
-	import Turntable from './Turntable.svelte'
+	import Presets, { presets } from './Presets.svelte'
+	import Turntable, { disc, stopTurntable, resumeTurntable } from './Turntable.svelte'
+	import Spokes, { SPOKES_MAX } from './Spokes.svelte'
+	import Shortcut from './Shortcut.svelte'
 
 	export let analyzer
 
-	let bars = [], frame
-	let invert = false
-	let disc = { value: 0, active: false }
-	let threshold = 0.5
-	let min = 50
-	let max = 100
+	let preset = 'viz'
+	let { spokes, offset, speed, min, max, invert } = presets[preset]
 
-	function loop() {
-		frame = requestAnimationFrame(loop)
+	let bars = [], frame
+
+	function jam() {
+		frame = requestAnimationFrame(jam)
 
 		if (!analyzer) return
 
 		const dataArray = new Uint8Array(analyzer.frequencyBinCount)
 		analyzer.getByteFrequencyData(dataArray)
 
-		bars = Array.from(dataArray).slice(0, dataArray.length * threshold)
+		bars = Array.from(dataArray).slice(offset, spokes + offset)
 
 		if (!disc.active) {
 			if (disc.value >= 360) {
 				disc.value = 0
 			} else {
-				disc.value++
+				disc.value += speed
 			}
 		}
 	}
 
 	onMount(() => {
-		loop()
+		jam()
 		return () => cancelAnimationFrame(frame)
 	})
 </script>
