@@ -1,9 +1,12 @@
 <audio bind:this={audio} autoplay />
 
-<FrequencyCSS {analyzer} />
+<Turntable>
+	<Platter {analyzer} />
+</Turntable>
 
 <script>
-	import FrequencyCSS from './FrequencyCSS.svelte'
+	import Turntable from './Turntable.svelte'
+	import Platter from './Platter.svelte'
 
 	export let stream
 

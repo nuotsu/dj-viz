@@ -1,31 +1,53 @@
 <nav>
-	<button on:click={() => { power = !power }}>
-		🔌
-	</button>
-
+	<Sound/>
+	<Camera/>
 	<Fullscreen/>
 </nav>
 
-{#if power}
-	{#await getMedia()}
-		Asking...
-	{:then stream}
-		<AudioCanvas {stream} />
-	{:catch}
-		🙅‍♂️
-	{/await}
-{/if}
+<main>
+	<section>
+		{#if $sound}
+			{#await getMedia({ audio: true })}
+				Asking...
+			{:then stream}
+				<SoundDJ {stream} />
+			{:catch}
+				🙅‍♂️
+			{/await}
+		{/if}
+		{#if $camera}
+			{#await getMedia({ video: true })}
+				Asking...
+			{:then stream}
+				<CameraDJ {stream} />
+			{:catch}
+				🙅‍♂️
+			{/await}
+		{/if}
+	</section>
+
+	<section>
+		<Spokes/>
+		<Speed/>
+		<Radii/>
+		<Invert/>
+	</section>
+</main>
 
 <script>
-	import { dev } from '$app/env'
+	import Sound, { sound } from '$lib/Sound.svelte'
+	import Camera, { camera } from '$lib/Camera.svelte'
 	import Fullscreen from '$/lib/Fullscreen.svelte'
-	import AudioCanvas from '$/lib/AudioCanvas.svelte'
+	import SoundDJ from '$/lib/SoundDJ.svelte'
+	import CameraDJ from '$lib/CameraDJ.svelte'
+	import Spokes from '$/lib/controls/Spokes.svelte'
+	import Speed from '$/lib/controls/Speed.svelte'
+	import Radii from '$/lib/controls/Radii.svelte'
+	import Invert from '$/lib/controls/Invert.svelte'
 
-	let power = dev
-
-	async function getMedia() {
+	async function getMedia(constraints) {
 		if ('navigator' in window) {
-			return navigator.mediaDevices.getUserMedia({ audio: true })
+			return navigator.mediaDevices.getUserMedia(constraints)
 		}
 	}
 </script>

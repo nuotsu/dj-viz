@@ -5,13 +5,15 @@
 >
 	<slot></slot>
 
-	<input type="range" min={0} max={360} bind:value={$disc.value} />
+	<input type="range" hidden
+		bind:value={$disc.value}
+		min={0} max={360}
+	/>
 </label>
 
 <style>
 	label {
 		display: inline-block;
-		border: 3px dashed red;
 	}
 
 	input {
@@ -20,10 +22,22 @@
 </style>
 
 <script>
+	let isSpinning = false
+
 	function wheel(e) {
 		e.preventDefault()
 
-		console.log(e.deltaY)
+		if (!!Math.abs(e.deltaY)) {
+			$disc.active = true
+		}
+
+		$disc.value += (e.deltaY / 4)
+
+		clearTimeout(isSpinning)
+
+		isSpinning = setTimeout(() => {
+			$disc.active = false
+		}, 100)
 	}
 </script>
 
