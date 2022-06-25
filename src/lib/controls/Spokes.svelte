@@ -41,7 +41,7 @@
 <script>
 	let input_spokes, input_offset
 
-	function shortcut({ key, shiftKey }) {
+	function shortcut({ key }) {
 		if (key === '\\') input_spokes.focus()
 		if (key === '|') input_offset.focus()
 	}

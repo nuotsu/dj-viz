@@ -1,11 +1,8 @@
 <audio bind:this={audio} autoplay />
 
-<Turntable>
-	<Platter {analyzer} />
-</Turntable>
+<Platter {analyzer} />
 
 <script>
-	import Turntable from './Turntable.svelte'
 	import Platter from './Platter.svelte'
 
 	export let stream

@@ -25,12 +25,14 @@
 <script>
 	let input
 
+	const nums = Array.from(Array(10).keys()).map(String)
+
 	function shortcut({ key }) {
 		if (key == 't') input.focus()
 	}
 
 	function focused({ key }) {
-		if (key === '0') $speed = 0
+		if (nums.includes(key)) $speed = Number(key)
 	}
 </script>
 

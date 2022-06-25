@@ -1,8 +1,10 @@
-<figure style:--disc="{$disc.value}deg">
+<figure
+	style:--width="{$width}px"
+	style:--dir={$invert ? 'bottom' : 'top'}
+	style:--min="{$min}%"
+	>
 	{#each $bars as bar, i}
 		<div
-			style:--dir={$invert ? 'bottom' : 'top'}
-			style:--min="{$min}%"
 			style:--percentage="{(bar / 256 * ($max - $min)) + $min}%"
 			style:--angle="{i / $bars.length}turn"
 		/>
@@ -16,15 +18,13 @@
 		grid-template-rows: repeat(2, 1fr);
 		place-content: start center;
 		aspect-ratio: 1;
-		width: 300px;
-		transform: rotate(var(--disc));
 	}
 
 	div {
 		grid-column: 1 / -1;
 		grid-row: 1 / 2;
 		position: relative;
-		width: 1px;
+		width: var(--width);
 		background: linear-gradient(to var(--dir),
 			transparent,
 			transparent var(--min),
@@ -38,7 +38,7 @@
 </style>
 
 <script>
-	import { disc } from './Turntable.svelte'
+	import { width } from './controls/Width.svelte'
 	import { min, max } from './controls/Radii.svelte'
 	import { invert } from './controls/Invert.svelte'
 </script>

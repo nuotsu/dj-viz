@@ -1,15 +1,15 @@
-<Bars />
+<FrequencyViz {bars} />
 
 <script>
 	import { onMount } from 'svelte'
-	import Bars, { bars } from './Bars.svelte'
 	import { disc } from './controls/Turntable.svelte'
 	import { spokes, offset } from './controls/Spokes.svelte'
 	import { speed } from './controls/Speed.svelte'
+	import FrequencyViz from './FrequencyViz.svelte'
 
 	export let analyzer
 
-	let frame
+	let bars = [], frame
 
 	function jam() {
 		frame = requestAnimationFrame(jam)
@@ -19,7 +19,7 @@
 		const dataArray = new Uint8Array(analyzer.frequencyBinCount)
 		analyzer.getByteFrequencyData(dataArray)
 
-		$bars = Array.from(dataArray).slice($offset, $spokes + $offset)
+		bars = Array.from(dataArray).slice($offset, $spokes + $offset)
 
 		if (!$disc.active) {
 			if ($disc.value >= 360) {

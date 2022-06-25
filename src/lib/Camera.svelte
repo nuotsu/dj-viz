@@ -5,5 +5,5 @@
 <script context="module">
 	import { writable } from 'svelte/store'
 
-	export const camera = writable(false)
+	export const camera = writable(true)
 </script>
