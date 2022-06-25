@@ -3,7 +3,7 @@
 		🔌
 	</button>
 
-	<Fullscreen />
+	<Fullscreen/>
 </nav>
 
 {#if power}
