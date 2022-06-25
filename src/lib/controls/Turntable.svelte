@@ -6,7 +6,7 @@
 <script context="module">
 	import { writable } from 'svelte/store'
 
-	const isSpinning = writable(false)
+	let isSpinning = writable(false)
 
 	export const disc = writable({
 		value: 0,
