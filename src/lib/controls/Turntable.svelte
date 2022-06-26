@@ -1,31 +1,29 @@
 <input type="range" hidden
-	bind:value={$disc.value}
+	bind:value={$discValue}
 	min={0} max={360}
 />
 
 <script context="module">
 	import { writable } from 'svelte/store'
 
-	const isSpinning = writable(false)
+	export const discValue = writable(0)
+	export const discActive = writable(false)
 
-	export const disc = writable({
-		value: 0,
-		active: false,
-	})
+	let spin
 
-	export function wheel(e, disc) {
+	export function wheel(e) {
 		e.preventDefault()
 
+		if (spin) clearTimeout(spin)
+
+		spin = setTimeout(() => {
+			discActive.set(false)
+		}, 100)
+
 		if (!!Math.abs(e.deltaY)) {
-			disc.active = true
+			discActive.set(true)
 		}
 
-		disc.value += (e.deltaY / 4)
-
-		clearTimeout(isSpinning)
-
-		isSpinning.set(setTimeout(() => {
-			disc.active = false
-		}, 100))
+		discValue.update(value => value += (e.deltaY / 4))
 	}
 </script>

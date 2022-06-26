@@ -5,10 +5,10 @@
 </nav>
 
 <section id="visualizers"
-	style:--disc="{$disc.value}deg"
-	on:mousedown={() => $disc.active = true}
-	on:mouseup={() => $disc.active = false}
-	on:wheel={e => wheel(e, $disc)}
+	style:--disc="{$discValue}deg"
+	on:mousedown={() => $discActive = true}
+	on:mouseup={() => $discActive = false}
+	on:wheel={wheel}
 >
 	{#if $camera}
 		{#await getMedia({ video: true })}
@@ -58,8 +58,8 @@
 	import SoundDJ from '$/lib/SoundDJ.svelte'
 	import CameraDJ from '$lib/CameraDJ.svelte'
 
-	import { disc, wheel } from '$/lib/controls/Turntable.svelte'
-import Controls from '$lib/controls/Controls.svelte'
+	import { discValue, discActive, wheel } from '$/lib/controls/Turntable.svelte'
+	import Controls from '$lib/controls/Controls.svelte'
 
 	async function getMedia(constraints) {
 		if ('navigator' in window) {

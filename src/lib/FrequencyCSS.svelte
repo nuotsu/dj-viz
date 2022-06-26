@@ -2,7 +2,7 @@
 
 <script>
 	import { onMount } from 'svelte'
-	import { disc } from './controls/Turntable.svelte'
+	import { discValue, discActive } from './controls/Turntable.svelte'
 	import { spokes, offset } from './controls/Spokes.svelte'
 	import { speed } from './controls/Speed.svelte'
 	import FrequencyViz from './FrequencyViz.svelte'
@@ -21,11 +21,11 @@
 
 		bars = Array.from(dataArray).slice($offset, $spokes + $offset)
 
-		if (!$disc.active) {
-			if ($disc.value >= 360) {
-				$disc.value = 0
+		if (!$discActive) {
+			if ($discValue >= 360) {
+				$discValue = 0
 			} else {
-				$disc.value += $speed
+				$discValue += $speed
 			}
 		}
 	}
