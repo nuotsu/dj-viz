@@ -1,13 +1,33 @@
-<label on:wheel={e => wheel(e, factor)}>
-	<input type="range" hidden
+<script>
+	export let title, value, ref, min, max, step, factor, toFixed = 1
+
+	function wheel(e) {
+		e.preventDefault()
+
+		let delta = e.deltaY * (factor || (max - min) * 0.005)
+		let newValue = value + delta
+
+		if (newValue > max) {
+			value = max
+		} else if (newValue < min) {
+			value = min
+		} else {
+			value += delta
+		}
+	}
+</script>
+
+<label on:wheel={wheel} on:keydown>
+	<input type="range"
 		bind:this={ref}
 		bind:value={value}
-		{min} {max}
+		{min} {max} {step}
 	/>
 
 	<knob style:--progress={(value - min) / (max - min)}>
 		<indicator />
-		<output class="center">{value}</output>
+
+		<output class="center">{value?.toFixed(toFixed)}</output>
 	</knob>
 
 	<span>{title}</span>
@@ -19,9 +39,20 @@
 		text-align: center;
 	}
 
+	input {
+		position: absolute;
+		clip: rect(0,0,0,0);
+	}
+
+	label:focus-within knob {
+		outline: 1px dashed;
+		outline-offset: 1px;
+	}
+
 	knob {
 		position: relative;
 		display: block;
+		aspect-ratio: 1;
 		border: 1px solid;
 		border-radius: 100%;
 		overflow: hidden;
@@ -62,22 +93,3 @@
 		);
 	}
 </style>
-
-<script>
-	export let title, value, factor = 1, ref, min, max
-
-	function wheel(e, factor) {
-		e.preventDefault()
-
-		let delta = e.deltaY * factor
-		let newValue = value + delta
-
-		if (newValue > max) {
-			value = max
-		} else if (newValue < min) {
-			value = min
-		} else {
-			value += delta
-		}
-	}
-</script>

@@ -3,14 +3,12 @@
 <Knob title={$invert ? 'outer' : 'inner'}
 	bind:ref={rmin}
 	bind:value={$min}
-	factor={0.5}
 	min={0} max={99}
 />
 
 <Knob title={$invert ? 'inner' : 'outer'}
 	bind:ref={rmax}
 	bind:value={$max}
-	factor={0.5}
 	min={1} max={100}
 />
 
