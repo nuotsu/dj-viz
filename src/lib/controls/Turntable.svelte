@@ -14,6 +14,8 @@
 
 <style>
 	label {
+		position: relative;
+		z-index: 1;
 		display: grid;
 		width: var(--disc-size);
 		aspect-ratio: 1;

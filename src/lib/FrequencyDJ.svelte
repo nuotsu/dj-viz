@@ -1,24 +1,38 @@
-<audio bind:this={audio} autoplay />
-
-<Platter {analyzer} />
+<Bars />
 
 <script>
-	import Platter from './Platter.svelte'
+	import { onMount } from 'svelte'
+	import { analyzer } from './AudioAnalyzer.svelte'
+	import Bars, { bars } from './Bars.svelte'
+	import { discValue, discActive } from './controls/Turntable.svelte'
+	import { spokes, offset } from './controls/Spokes.svelte'
+	import { speed } from './controls/Speed.svelte'
 
-	export let stream
+	let frame
 
-	let audio, analyzer
+	function jam() {
+		frame = requestAnimationFrame(jam)
 
-	$: if (audio && audio?.srcObject !== stream) {
-		audio.srcObject = stream
+		if (!$analyzer) return
 
-		let audioCtx = new AudioContext()
+		const dataArray = new Uint8Array($analyzer.frequencyBinCount)
+		$analyzer.getByteFrequencyData(dataArray)
 
-		analyzer = audioCtx.createAnalyser()
-		analyzer.connect(audioCtx.destination)
+		$bars = Array.from(dataArray).slice($offset, $spokes + $offset)
 
-		audioCtx
-			.createMediaElementSource(audio)
-			.connect(analyzer)
+		if (!$discActive) {
+			if ($discValue >= 360) {
+				$discValue %= 360
+			} else if ($discValue < 0) {
+				$discValue = ($discValue % 360) + 360
+			}
+
+			$discValue += $speed
+		}
 	}
+
+	onMount(() => {
+		jam()
+		return () => cancelAnimationFrame(frame)
+	})
 </script>

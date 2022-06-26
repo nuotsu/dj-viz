@@ -4,7 +4,7 @@
 	style:--min="{$min}%"
 	>
 	{#each $bars as bar, i}
-		<div
+		<bar
 			style:--percentage="{(bar / 256 * ($max - $min)) + $min}%"
 			style:--angle="{i / $bars.length}turn"
 		/>
@@ -14,13 +14,15 @@
 <style>
 	figure {
 		pointer-events: none;
+		grid-column: 1 / -1;
+		grid-row: 1 / -1;
 		display: grid;
 		grid-template-rows: repeat(2, 1fr);
 		place-content: start center;
 		aspect-ratio: 1;
 	}
 
-	div {
+	bar {
 		grid-column: 1 / -1;
 		grid-row: 1 / 2;
 		position: relative;

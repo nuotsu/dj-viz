@@ -8,6 +8,10 @@
 	<section>
 		{#if $sound}
 			{#await getMedia({ audio: true }) then audioStream}
+				<AudioAnalyzer stream={audioStream} />
+
+				<TimeDomainDJ />
+
 				<Turntable>
 					{#if $camera}
 						{#await getMedia({ video: true }) then videoStream}
@@ -15,10 +19,8 @@
 						{:catch}🙅‍♂️{/await}
 					{/if}
 
-					<FrequencyDJ stream={audioStream} />
+					<FrequencyDJ />
 				</Turntable>
-
-				<TimeDomainDJ stream={audioStream} />
 			{:catch}🙅‍♂️{/await}
 		{/if}
 	</section>
@@ -41,6 +43,7 @@
 	}
 
 	section {
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
@@ -53,6 +56,7 @@
 	import Sound, { sound } from '$lib/Sound.svelte'
 	import Fullscreen from '$/lib/Fullscreen.svelte'
 
+	import AudioAnalyzer from '$lib/AudioAnalyzer.svelte'
 	import Turntable from '$/lib/controls/Turntable.svelte'
 	import CameraDJ from '$lib/CameraDJ.svelte'
 	import FrequencyDJ from '$lib/FrequencyDJ.svelte'

@@ -12,7 +12,6 @@
 		width: 100%;
 		height: 100%;
 		filter: grayscale();
-		opacity: 0.4;
 	}
 
 	video {
@@ -22,6 +21,7 @@
 		transform: translate(-50%, -50%);
 		height: 100%;
 		object-fit: cover;
+		opacity: 0.4;
 	}
 </style>
 

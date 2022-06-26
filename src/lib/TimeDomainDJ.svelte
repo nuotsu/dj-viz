@@ -1,13 +1,23 @@
-<figure>
+<Oscillator/>
 
-</figure>
+<script>
+	import { onMount } from 'svelte'
+	import { analyzer } from './AudioAnalyzer.svelte'
+	import Oscillator, { oscillations } from './Oscillator.svelte'
 
-<style>
-	figure {
-		display: block;
-		aspect-ratio: 1;
-		width: var(--disc-size);
-		border: 3px dashed red;
-		border-radius: 100%;
+	let frame
+
+	function jam() {
+		frame = requestAnimationFrame(jam)
+
+		const dataArray = new Uint8Array($analyzer.frequencyBinCount)
+		$analyzer.getByteTimeDomainData(dataArray)
+
+		$oscillations = Array.from(dataArray).slice(0, 512)
 	}
-</style>
+
+	onMount(() => {
+		jam()
+		return () => cancelAnimationFrame(frame)
+	})
+</script>
