@@ -59,7 +59,7 @@
 	import CameraDJ from '$lib/CameraDJ.svelte'
 
 	import { disc, wheel } from '$/lib/controls/Turntable.svelte'
-import Controls from '$lib/controls/Controls.svelte';
+import Controls from '$lib/controls/Controls.svelte'
 
 	async function getMedia(constraints) {
 		if ('navigator' in window) {

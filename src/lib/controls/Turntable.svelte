@@ -6,7 +6,7 @@
 <script context="module">
 	import { writable } from 'svelte/store'
 
-	let isSpinning = writable(false)
+	const isSpinning = writable(false)
 
 	export const disc = writable({
 		value: 0,
@@ -24,8 +24,8 @@
 
 		clearTimeout(isSpinning)
 
-		isSpinning = setTimeout(() => {
+		isSpinning.set(setTimeout(() => {
 			disc.active = false
-		}, 100)
+		}, 100))
 	}
 </script>
