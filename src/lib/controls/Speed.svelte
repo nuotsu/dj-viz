@@ -5,17 +5,15 @@
 	factor={0.02}
 />
 
-<script>
+<script context="module">
+	import Knob from '../inputs/Knob.svelte'
+	import { writable } from 'svelte/store'
+
 	const nums = Array.from(Array(10).keys()).map(String)
 
 	function keydown({ key }) {
-		if (nums.includes(key)) $speed = Number(key)
+		if (nums.includes(key)) speed.set(Number(key))
 	}
-</script>
-
-<script context="module">
-	import { writable } from 'svelte/store'
-	import Knob from '../inputs/Knob.svelte'
 
 	export const speed = writable(1)
 </script>

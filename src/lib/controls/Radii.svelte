@@ -10,12 +10,9 @@
 	shortcut="]"
 />
 
-<script>
+<script context="module">
 	import { invert } from './Invert.svelte'
 	import Knob from '../inputs/Knob.svelte'
-</script>
-
-<script context="module">
 	import { writable } from 'svelte/store'
 
 	export const min = writable(50)

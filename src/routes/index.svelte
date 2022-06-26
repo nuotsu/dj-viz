@@ -1,39 +1,49 @@
-<nav>
-	<Sound/>
-	<Camera/>
-	<Fullscreen/>
-</nav>
+<main>
+	<nav>
+		<Sound/>
+		<Camera/>
+		<Fullscreen/>
+	</nav>
 
-<Turntable>
-	{#if $camera}
-		{#await getMedia({ video: true })}
-			Asking...
-		{:then stream}
-			<CameraDJ {stream} />
-		{:catch}
-			🙅‍♂️
-		{/await}
-	{/if}
+	<section>
+		{#if $sound}
+			{#await getMedia({ audio: true }) then audioStream}
+				<Turntable>
+					{#if $camera}
+						{#await getMedia({ video: true }) then videoStream}
+							<CameraDJ stream={videoStream} />
+						{:catch}🙅‍♂️{/await}
+					{/if}
 
-	{#if $sound}
-		{#await getMedia({ audio: true })}
-			Asking...
-		{:then stream}
-			<SoundDJ {stream} />
-		{:catch}
-			🙅‍♂️
-		{/await}
-	{/if}
-</Turntable>
+					<SoundDJ stream={audioStream} />
+				</Turntable>
+			{:catch}🙅‍♂️{/await}
+		{/if}
+	</section>
 
-<aside>
-	<Spokes/>
-	<Width/>
-	<Speed/>
-	<Radii/>
-	<Invert/>
-	<Mirror/>
-</aside>
+	<nav>
+		<Spokes/>
+		<Width/>
+		<Speed/>
+		<Radii/>
+		<Invert/>
+		<Mirror/>
+	</nav>
+</main>
+
+<style>
+	main {
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+		height: 100vh;
+	}
+
+	section {
+		display: grid;
+		place-content: center;
+		overflow: hidden;
+	}
+</style>
 
 <script>
 	import Camera, { camera } from '$lib/Camera.svelte'

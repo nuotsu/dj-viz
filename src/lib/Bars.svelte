@@ -37,13 +37,10 @@
 	}
 </style>
 
-<script>
+<script context="module">
 	import { width } from './controls/Width.svelte'
 	import { min, max } from './controls/Radii.svelte'
 	import { invert } from './controls/Invert.svelte'
-</script>
-
-<script context="module">
 	import { writable } from 'svelte/store'
 
 	export const bars = writable([])
