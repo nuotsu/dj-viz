@@ -1,12 +1,12 @@
 <Toggle
-	title="invert"
-	shortcut="i"
-	bind:checked={$invert}
+	title="mirror"
+	shortcut="x"
+	bind:checked={$mirror}
 />
 
 <script context="module">
 	import Toggle from '$lib/inputs/Toggle.svelte'
 	import { writable } from 'svelte/store'
 
-	export const invert = writable(false)
+	export const mirror = writable(false)
 </script>

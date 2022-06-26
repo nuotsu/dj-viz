@@ -32,6 +32,7 @@
 	<Speed/>
 	<Radii/>
 	<Invert/>
+	<Mirror/>
 </aside>
 
 <script>
@@ -49,6 +50,7 @@
 	import Speed from '$/lib/controls/Speed.svelte'
 	import Radii from '$/lib/controls/Radii.svelte'
 	import Invert from '$/lib/controls/Invert.svelte'
+	import Mirror from '$/lib/controls/Mirror.svelte'
 
 	async function getMedia(constraints) {
 		if ('navigator' in window) {

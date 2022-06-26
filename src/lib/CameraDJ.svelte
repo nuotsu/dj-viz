@@ -1,5 +1,5 @@
-<figure>
-	<video bind:this={video} autoplay>
+<figure style:scale="{$mirror ? -1 : 1} 1">
+	<video autoplay bind:this={video}>
 		<track kind="captions" />
 	</video>
 </figure>
@@ -26,6 +26,8 @@
 </style>
 
 <script>
+	import { mirror } from './controls/Mirror.svelte'
+
 	export let stream
 
 	let video

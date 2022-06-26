@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+	:root {
+		--input-size: 4em;
+	}
+
 	body {
 		background-color: #000;
 		color: #fff;

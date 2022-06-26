@@ -1,27 +1,18 @@
-<svelte:window on:keydown={shortcut} />
-
 <Knob title={$invert ? 'outer' : 'inner'}
-	bind:ref={rmin}
 	bind:value={$min}
 	min={0} max={99}
+	shortcut="["
 />
 
 <Knob title={$invert ? 'inner' : 'outer'}
-	bind:ref={rmax}
 	bind:value={$max}
 	min={1} max={100}
+	shortcut="]"
 />
 
 <script>
 	import { invert } from './Invert.svelte'
-	import Knob from './Knob.svelte'
-
-	let rmin, rmax
-
-	function shortcut({ key }) {
-		if (key == '[') rmin.focus()
-		if (key == ']') rmax.focus()
-	}
+	import Knob from '../inputs/Knob.svelte'
 </script>
 
 <script context="module">

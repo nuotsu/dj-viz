@@ -1,5 +1,7 @@
 <script>
-	export let title, value, ref, min, max, step, factor, toFixed = 1
+	export let title, value, min, max, step, factor, toFixed = 1, shortcut
+
+	let input
 
 	function wheel(e) {
 		e.preventDefault()
@@ -15,11 +17,17 @@
 			value += delta
 		}
 	}
+
+	function keydown({ key }) {
+		if (key === shortcut) input.focus()
+	}
 </script>
+
+<svelte:window on:keydown={keydown} />
 
 <label on:wheel={wheel} on:keydown>
 	<input type="range"
-		bind:this={ref}
+		bind:this={input}
 		bind:value={value}
 		{min} {max} {step}
 	/>
@@ -46,7 +54,7 @@
 
 	label:focus-within knob {
 		outline: 1px dashed;
-		outline-offset: 1px;
+		outline-offset: 2px;
 	}
 
 	knob {
@@ -59,10 +67,9 @@
 	}
 
 	indicator {
-		--size: 4em;
 		display: block;
 		aspect-ratio: 1;
-		width: var(--size);
+		width: var(--input-size);
 	}
 
 	indicator::before {
