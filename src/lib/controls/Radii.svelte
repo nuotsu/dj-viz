@@ -1,36 +1,22 @@
 <svelte:window on:keydown={shortcut} />
 
-<label>
-	<input type="range"
-		bind:this={rmin}
-		bind:value={$min}
-		min={0} max={99}
-	/>
-	{$invert ? 'outer' : 'inner'}
-</label>
+<Knob title={$invert ? 'outer' : 'inner'}
+	bind:ref={rmin}
+	bind:value={$min}
+	factor={0.5}
+	min={0} max={99}
+/>
 
-<label>
-	<input type="range"
-		bind:this={rmax}
-		bind:value={$max}
-		min={1} max={100}
-	/>
-	{$invert ? 'inner' : 'outer'}
-</label>
-
-<style>
-	label {
-		display: flex;
-		align-self: start;
-	}
-
-	input {
-		accent-color: orange;
-	}
-</style>
+<Knob title={$invert ? 'inner' : 'outer'}
+	bind:ref={rmax}
+	bind:value={$max}
+	factor={0.5}
+	min={1} max={100}
+/>
 
 <script>
 	import { invert } from './Invert.svelte'
+	import Knob from './Knob.svelte'
 
 	let rmin, rmax
 

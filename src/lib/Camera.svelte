@@ -6,5 +6,5 @@
 	import { dev } from '$app/env'
 	import { writable } from 'svelte/store'
 
-	export const camera = writable(dev)
+	export const camera = writable(false)
 </script>
