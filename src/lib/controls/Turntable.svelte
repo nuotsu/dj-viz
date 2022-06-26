@@ -15,7 +15,7 @@
 <style>
 	label {
 		display: grid;
-		width: 300px;
+		width: var(--disc-size);
 		aspect-ratio: 1;
 		border-radius: 100%;
 		overflow: hidden;

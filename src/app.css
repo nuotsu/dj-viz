@@ -4,6 +4,7 @@
 
 @layer base {
 	:root {
+		--disc-size: 300px;
 		--input-size: 4em;
 	}
 

@@ -15,8 +15,10 @@
 						{:catch}🙅‍♂️{/await}
 					{/if}
 
-					<SoundDJ stream={audioStream} />
+					<FrequencyDJ stream={audioStream} />
 				</Turntable>
+
+				<TimeDomainDJ stream={audioStream} />
 			{:catch}🙅‍♂️{/await}
 		{/if}
 	</section>
@@ -35,12 +37,13 @@
 	main {
 		display: grid;
 		grid-template-rows: auto 1fr auto;
-		height: 100vh;
+		min-height: 100vh;
 	}
 
 	section {
-		display: grid;
-		place-content: center;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
 		overflow: hidden;
 	}
 </style>
@@ -50,10 +53,10 @@
 	import Sound, { sound } from '$lib/Sound.svelte'
 	import Fullscreen from '$/lib/Fullscreen.svelte'
 
-	import SoundDJ from '$/lib/SoundDJ.svelte'
-	import CameraDJ from '$lib/CameraDJ.svelte'
-
 	import Turntable from '$/lib/controls/Turntable.svelte'
+	import CameraDJ from '$lib/CameraDJ.svelte'
+	import FrequencyDJ from '$lib/FrequencyDJ.svelte'
+	import TimeDomainDJ from '$lib/TimeDomainDJ.svelte'
 
 	import Spokes from '$/lib/controls/Spokes.svelte'
 	import Width from '$lib/controls/Width.svelte'
