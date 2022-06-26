@@ -4,12 +4,7 @@
 	<Fullscreen/>
 </nav>
 
-<section id="visualizers"
-	style:--disc="{$discValue}deg"
-	on:mousedown={() => $discActive = true}
-	on:mouseup={() => $discActive = false}
-	on:wheel={wheel}
->
+<Turntable>
 	{#if $camera}
 		{#await getMedia({ video: true })}
 			Asking...
@@ -29,26 +24,15 @@
 			🙅‍♂️
 		{/await}
 	{/if}
-</section>
+</Turntable>
 
-<Controls/>
-
-<style>
-	#visualizers {
-		display: grid;
-		width: 300px;
-		aspect-ratio: 1;
-		border-radius: 100%;
-		overflow: hidden;
-		transform: rotate(var(--disc));
-		will-change: transform;
-	}
-
-	#visualizers > :global(*) {
-		grid-column: 1 / -1;
-		grid-row: 1 / -1;
-	}
-</style>
+<aside>
+	<Spokes/>
+	<Width/>
+	<Speed/>
+	<Radii/>
+	<Invert/>
+</aside>
 
 <script>
 	import Camera, { camera } from '$lib/Camera.svelte'
@@ -58,8 +42,13 @@
 	import SoundDJ from '$/lib/SoundDJ.svelte'
 	import CameraDJ from '$lib/CameraDJ.svelte'
 
-	import { discValue, discActive, wheel } from '$/lib/controls/Turntable.svelte'
-	import Controls from '$lib/controls/Controls.svelte'
+	import Turntable from '$/lib/controls/Turntable.svelte'
+
+	import Spokes from '$/lib/controls/Spokes.svelte'
+	import Width from '$lib/controls/Width.svelte'
+	import Speed from '$/lib/controls/Speed.svelte'
+	import Radii from '$/lib/controls/Radii.svelte'
+	import Invert from '$/lib/controls/Invert.svelte'
 
 	async function getMedia(constraints) {
 		if ('navigator' in window) {

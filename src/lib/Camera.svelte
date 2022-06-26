@@ -3,7 +3,6 @@
 </button>
 
 <script context="module">
-	import { dev } from '$app/env'
 	import { writable } from 'svelte/store'
 
 	export const camera = writable(false)
