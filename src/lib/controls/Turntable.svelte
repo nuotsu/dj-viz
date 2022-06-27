@@ -25,6 +25,13 @@
 		will-change: transform;
 	}
 
+	@screen md {
+		label {
+			background-color: #000d;
+			box-shadow: 0 0 8em 8em #000d;
+		}
+	}
+
 	label > :global(*) {
 		grid-column: 1 / -1;
 		grid-row: 1 / -1;

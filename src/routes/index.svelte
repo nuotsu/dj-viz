@@ -1,10 +1,4 @@
 <main>
-	<nav>
-		<Sound/>
-		<Camera/>
-		<Fullscreen/>
-	</nav>
-
 	<section>
 		{#if $sound}
 			{#await getMedia({ audio: true }) then audioStream}
@@ -26,20 +20,26 @@
 	</section>
 
 	<nav>
-		<Spokes/>
-		<Width/>
-		<Speed/>
-		<Radii/>
-		<Invert/>
-		<Mirror/>
+		<Sound/>
+		<Camera/>
+		<Fullscreen/>
 	</nav>
+
+	<Controls/>
 </main>
 
 <style>
 	main {
 		display: grid;
-		grid-template-rows: auto 1fr auto;
+		grid-template-rows: 1fr auto auto;
+		gap: 0.5rem;
 		min-height: 100vh;
+	}
+
+	nav {
+		display: flex;
+		justify-content: center;
+		gap: 0.5rem;
 	}
 
 	section {
@@ -62,12 +62,7 @@
 	import FrequencyDJ from '$lib/FrequencyDJ.svelte'
 	import TimeDomainDJ from '$lib/TimeDomainDJ.svelte'
 
-	import Spokes from '$/lib/controls/Spokes.svelte'
-	import Width from '$lib/controls/Width.svelte'
-	import Speed from '$/lib/controls/Speed.svelte'
-	import Radii from '$/lib/controls/Radii.svelte'
-	import Invert from '$/lib/controls/Invert.svelte'
-	import Mirror from '$/lib/controls/Mirror.svelte'
+	import Controls from '$lib/controls/Controls.svelte'
 
 	async function getMedia(constraints) {
 		if ('navigator' in window) {

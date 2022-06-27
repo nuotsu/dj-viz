@@ -1,5 +1,5 @@
 <script>
-	export let title, value, min, max, step, factor, toFixed = 1, shortcut
+	export let title, shortcut, value, min, max, step, factor, toFixed = 1, disabled
 
 	let input
 
@@ -25,11 +25,12 @@
 
 <svelte:window on:keydown={keydown} />
 
-<label on:wheel={wheel} on:keydown>
+<label on:wheel={!disabled && wheel} on:keydown class:disabled>
 	<input type="range"
 		bind:this={input}
 		bind:value={value}
-		{min} {max} {step}
+		on:change
+		{min} {max} {step} {disabled}
 	/>
 
 	<knob style:--progress={(value - min) / (max - min)}>
@@ -45,6 +46,10 @@
 	label {
 		display: inline-block;
 		text-align: center;
+	}
+
+	label.disabled {
+		opacity: 0.2;
 	}
 
 	input {

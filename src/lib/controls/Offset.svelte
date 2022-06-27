@@ -1,6 +1,6 @@
-<Knob title="spokes" shortcut="\"
-	bind:value={$spokes}
-	min={1} max={SPOKES_MAX}
+<Knob title="offset" shortcut="|"
+	bind:value={$offset}
+	min={0} max={SPOKES_MAX}
 	factor={0.2}
 	toFixed={0}
 	disabled={!$sound}
@@ -10,7 +10,7 @@
 	import Knob from '../inputs/Knob.svelte'
 	import { sound } from '$lib/Sound.svelte'
 	import { writable } from 'svelte/store'
+	import { SPOKES_MAX } from './Spokes.svelte'
 
-	export const SPOKES_MAX = 1024
-	export const spokes = writable(SPOKES_MAX)
+	export const offset = writable(0)
 </script>

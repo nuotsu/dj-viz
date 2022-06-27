@@ -1,6 +1,5 @@
 <button title="Fullscreen" on:click={onClick}>
 	📺
-	{#if fullscreen}❎{/if}
 </button>
 
 <script>

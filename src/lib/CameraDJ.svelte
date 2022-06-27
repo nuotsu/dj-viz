@@ -1,5 +1,8 @@
 <figure style:scale="{$mirror ? -1 : 1} 1">
-	<video autoplay bind:this={video}>
+	<video autoplay
+		bind:this={video}
+		style:opacity={$opacity}
+	>
 		<track kind="captions" />
 	</video>
 </figure>
@@ -12,6 +15,7 @@
 		width: 100%;
 		height: 100%;
 		filter: grayscale();
+		background-color: #000;
 	}
 
 	video {
@@ -21,12 +25,12 @@
 		transform: translate(-50%, -50%);
 		height: 100%;
 		object-fit: cover;
-		opacity: 0.4;
 	}
 </style>
 
 <script>
 	import { mirror } from './controls/Mirror.svelte'
+	import { opacity } from './controls/Opacity.svelte'
 
 	export let stream
 

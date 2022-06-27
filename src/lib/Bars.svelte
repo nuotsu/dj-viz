@@ -4,10 +4,12 @@
 	style:--min="{$min}%"
 	>
 	{#each $bars as bar, i}
-		<bar
-			style:--percentage="{(bar / 256 * ($max - $min)) + $min}%"
-			style:--angle="{i / $bars.length}turn"
-		/>
+		{#if i % Math.round($spread) === 0}
+			<bar
+				style:--percentage="{(bar / 256 * ($max - $min)) + $min}%"
+				style:--angle="{i / $bars.length}turn"
+			/>
+		{/if}
 	{/each}
 </figure>
 
@@ -40,6 +42,8 @@
 </style>
 
 <script context="module">
+	import { spokes } from './controls/Spokes.svelte'
+	import { spread } from './controls/Spread.svelte'
 	import { width } from './controls/Width.svelte'
 	import { min, max } from './controls/Radii.svelte'
 	import { invert } from './controls/Invert.svelte'

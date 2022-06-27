@@ -1,7 +1,7 @@
-<svelte:window on:keydown={keydown} />
+<svelte:window on:keydown={!disabled && keydown} />
 
-<label>
-	<input type="checkbox" bind:checked hidden />
+<label class:disabled>
+	<input type="checkbox" bind:checked hidden {disabled} />
 
 	<toggle/>
 
@@ -12,6 +12,10 @@
 	label {
 		display: inline-block;
 		text-align: center;
+	}
+
+	label.disabled {
+		opacity: 0.2;
 	}
 
 	toggle {
@@ -35,7 +39,7 @@
 </style>
 
 <script>
-	export let title, checked, shortcut
+	export let title, shortcut, checked, disabled
 
 	function keydown({ key }) {
 		if (key === shortcut) checked = !checked
