@@ -12,5 +12,6 @@
 	import { writable } from 'svelte/store'
 	import { SPOKES_MAX } from './Spokes.svelte'
 
-	export const offset = writable(0)
+	export const DEFAULT_OFFSET = 0
+	export const offset = writable(DEFAULT_OFFSET)
 </script>

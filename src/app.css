@@ -16,6 +16,16 @@
 	label {
 		cursor: pointer;
 	}
+
+	select {
+		cursor: pointer;
+	}
+
+	summary {
+		user-select: none;
+		cursor: pointer;
+		display: inline-block;
+	}
 }
 
 @layer utilities {

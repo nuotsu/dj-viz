@@ -11,5 +11,6 @@
 	import { sound } from '$lib/controls/Sound.svelte'
 	import { writable } from 'svelte/store'
 
-	export const spread = writable(2)
+	export const DEFAULT_SPREAD = 2
+	export const spread = writable(DEFAULT_SPREAD)
 </script>

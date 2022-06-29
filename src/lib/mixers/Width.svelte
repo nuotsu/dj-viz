@@ -9,5 +9,6 @@
 	import { sound } from '$lib/controls/Sound.svelte'
 	import { writable } from 'svelte/store'
 
-	export const width = writable(1)
+	export const DEFAULT_WIDTH = 1
+	export const width = writable(DEFAULT_WIDTH)
 </script>

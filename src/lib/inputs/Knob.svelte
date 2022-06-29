@@ -1,29 +1,3 @@
-<script>
-	export let title, shortcut, value, min, max
-	export let step = 1, factor = null, toFixed = 1, disabled = false
-
-	let input
-
-	function wheel(e) {
-		e.preventDefault()
-
-		let delta = e.deltaY * (factor || (max - min) * 0.005)
-		let newValue = value + delta
-
-		if (newValue > max) {
-			value = max
-		} else if (newValue < min) {
-			value = min
-		} else {
-			value += delta
-		}
-	}
-
-	function keydown({ key }) {
-		if (key === shortcut) input.focus()
-	}
-</script>
-
 <svelte:window on:keydown={keydown} />
 
 <label on:wheel={!disabled && wheel} on:keydown class:disabled>
@@ -35,7 +9,7 @@
 	/>
 
 	<knob style:--progress={(value - min) / (max - min)}>
-		<indicator />
+		<indicator/>
 
 		<output class="center">{value?.toFixed(toFixed)}</output>
 	</knob>
@@ -67,6 +41,8 @@
 		position: relative;
 		display: block;
 		aspect-ratio: 1;
+		width: var(--input-size);
+		margin: auto;
 		border: 1px solid;
 		border-radius: 100%;
 		overflow: hidden;
@@ -75,7 +51,7 @@
 	indicator {
 		display: block;
 		aspect-ratio: 1;
-		width: var(--input-size);
+		width: 100%;
 	}
 
 	indicator::before {
@@ -106,3 +82,29 @@
 		);
 	}
 </style>
+
+<script>
+	export let title, shortcut, value, min, max
+	export let step = 1, factor = null, toFixed = 1, disabled = false
+
+	let input
+
+	function wheel(e) {
+		e.preventDefault()
+
+		let delta = e.deltaY * (factor || (max - min) * 0.0025)
+		let newValue = value + delta
+
+		if (newValue > max) {
+			value = max
+		} else if (newValue < min) {
+			value = min
+		} else {
+			value += delta
+		}
+	}
+
+	function keydown({ key }) {
+		if (key === shortcut) input.focus()
+	}
+</script>

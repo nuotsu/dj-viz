@@ -18,6 +18,9 @@
 	import { sound } from '$lib/controls/Sound.svelte'
 	import { writable } from 'svelte/store'
 
-	export const min = writable(50)
-	export const max = writable(100)
+	export const DEFAULT_MIN = 50
+	export const DEFAULT_MAX = 100
+
+	export const min = writable(DEFAULT_MIN)
+	export const max = writable(DEFAULT_MAX)
 </script>

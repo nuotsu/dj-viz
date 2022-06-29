@@ -8,6 +8,7 @@
 	<Invert/>
 	<Mirror/>
 	<Opacity/>
+	<Saturation/>
 </nav>
 
 <style>
@@ -29,4 +30,5 @@
 	import Invert from './Invert.svelte'
 	import Mirror from './Mirror.svelte'
 	import Opacity from './Opacity.svelte'
+	import Saturation from './Saturation.svelte'
 </script>

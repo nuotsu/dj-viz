@@ -17,5 +17,6 @@
 		if (nums.includes(key)) speed.set(Number(key))
 	}
 
-	export const speed = writable(1)
+	export const DEFAULT_SPEED = 1
+	export const speed = writable(DEFAULT_SPEED)
 </script>

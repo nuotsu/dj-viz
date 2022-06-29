@@ -1,4 +1,5 @@
 <button
+	class:off={!$sound}
 	title="Sound {$sound ? 'on' : 'off'}"
 	on:click={() => { $sound = !$sound }}
 >

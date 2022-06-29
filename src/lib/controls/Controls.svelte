@@ -11,6 +11,11 @@
 		gap: 0.5rem;
 		font-size: 2rem;
 	}
+
+	nav :global(.off) {
+		opacity: 0.5;
+		filter: grayscale();
+	}
 </style>
 
 <script>

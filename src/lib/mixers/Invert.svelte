@@ -10,5 +10,6 @@
 	import { sound } from '$lib/controls/Sound.svelte'
 	import { writable } from 'svelte/store'
 
-	export const invert = writable(false)
+	export const DEFAULT_INVERT = false
+	export const invert = writable(DEFAULT_INVERT)
 </script>

@@ -1,4 +1,8 @@
-<button title="Fullscreen" on:click={onClick}>
+<button
+	class:off={!fullscreen}
+	title="Fullscreen"
+	on:click={onClick}
+>
 	📺
 </button>
 

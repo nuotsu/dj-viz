@@ -11,5 +11,6 @@
 	import { camera } from '$lib/controls/Camera.svelte'
 	import { writable } from 'svelte/store'
 
-	export const mirror = writable(false)
+	export const DEFAULT_MIRROR = false
+	export const mirror = writable(DEFAULT_MIRROR)
 </script>

@@ -11,6 +11,7 @@
 	import { sound } from '$lib/controls/Sound.svelte'
 	import { writable } from 'svelte/store'
 
+	export const DEFAULT_SPOKES = 1024
 	export const SPOKES_MAX = 1024
 	export const spokes = writable(SPOKES_MAX)
 </script>

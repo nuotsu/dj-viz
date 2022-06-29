@@ -8,3 +8,19 @@ declare namespace App {
 	// interface Session {}
 	// interface Stuff {}
 }
+
+export interface Preset {
+	[key: string]: {
+		spokes?: number
+		spread?: number
+		offset?: number
+		width?: number
+		speed?: number
+		min?: number
+		max?: number
+		invert?: boolean
+		mirror?: boolean
+		opacity?: number
+		saturation?: number
+	}
+}

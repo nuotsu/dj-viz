@@ -2,6 +2,7 @@
 	<video autoplay
 		use:srcObject={stream}
 		style:opacity={$opacity}
+		style:filter="saturate({$saturation})"
 	>
 		<track kind="captions" />
 	</video>
@@ -14,7 +15,6 @@
 		aspect-ratio: 1;
 		width: 100%;
 		height: 100%;
-		filter: grayscale();
 		background-color: #000;
 	}
 
@@ -31,6 +31,7 @@
 <script>
 	import { mirror } from '$lib/mixers/Mirror.svelte'
 	import { opacity } from '$lib/mixers/Opacity.svelte'
+	import { saturation } from '$lib/mixers/Saturation.svelte'
 
 	export let stream
 

@@ -10,5 +10,6 @@
 	import { camera } from '$lib/controls/Camera.svelte'
 	import { writable } from 'svelte/store'
 
-	export const opacity = writable(0.4)
+	export const DEFAULT_OPACITY = 0.4
+	export const opacity = writable(DEFAULT_OPACITY)
 </script>

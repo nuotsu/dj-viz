@@ -1,8 +1,9 @@
 <button
+	class:off={!$camera}
 	title="Camera {$camera ? 'on' : 'off'}"
 	on:click={() => { $camera = !$camera }}
 >
-	🤳
+	📹
 </button>
 
 <script context="module">
