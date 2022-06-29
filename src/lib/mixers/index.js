@@ -9,7 +9,7 @@ import { mirror, DEFAULT_MIRROR } from './Mirror.svelte'
 import { opacity, DEFAULT_OPACITY } from './Opacity.svelte'
 import { saturation, DEFAULT_SATURATION } from './Saturation.svelte'
 
-const DEFAULTS = {
+const SOUND_DEFAULTS = {
 	spokes: DEFAULT_SPOKES,
 	spread: DEFAULT_SPREAD,
 	offset: DEFAULT_OFFSET,
@@ -18,12 +18,18 @@ const DEFAULTS = {
 	min: DEFAULT_MIN,
 	max: DEFAULT_MAX,
 	invert: DEFAULT_INVERT,
+}
+
+const CAMERA_DEFAULTS = {
 	mirror: DEFAULT_MIRROR,
 	opacity: DEFAULT_OPACITY,
 	saturation: DEFAULT_SATURATION,
 }
 
-export { DEFAULTS }
+export {
+	SOUND_DEFAULTS,
+	CAMERA_DEFAULTS,
+}
 
 export default {
 	spokes,

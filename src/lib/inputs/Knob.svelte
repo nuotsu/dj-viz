@@ -1,6 +1,6 @@
-<svelte:window on:keydown={keydown} />
+<svelte:window on:keydown={onKeydown} />
 
-<label on:wheel={wheel} on:keydown>
+<label on:wheel={onWheel} on:keydown class:invalid>
 	<input type="range"
 		bind:this={input}
 		bind:value={value}
@@ -23,14 +23,17 @@
 		text-align: center;
 	}
 
+	.invalid {
+		@apply text-error;
+	}
+
 	input {
 		position: absolute;
 		clip: rect(0,0,0,0);
 	}
 
 	label:focus-within knob {
-		outline: 1px dashed;
-		outline-offset: 2px;
+		@apply focus;
 	}
 
 	knob {
@@ -80,12 +83,12 @@
 </style>
 
 <script>
-	export let title, shortcut, value, min, max
+	export let title, shortcut, value, min, max, invalid
 	export let step = 1, factor = null, toFixed = 1
 
 	let input
 
-	function wheel(e) {
+	function onWheel(e) {
 		e.preventDefault()
 
 		let delta = e.deltaY * (factor || (max - min) * 0.0025)
@@ -100,7 +103,7 @@
 		}
 	}
 
-	function keydown({ key }) {
+	function onKeydown({ key }) {
 		if (key === shortcut) input.focus()
 	}
 </script>

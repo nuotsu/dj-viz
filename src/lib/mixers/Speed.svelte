@@ -1,6 +1,6 @@
 <Knob title="speed" shortcut="t"
 	bind:value={$speed}
-	on:keydown={keydown}
+	on:keydown={onKeydown}
 	min={0} max={10} step={0.05}
 	factor={0.02}
 />
@@ -11,7 +11,7 @@
 
 	const nums = Array.from(Array(10).keys()).map(String)
 
-	function keydown({ key }) {
+	function onKeydown({ key }) {
 		if (nums.includes(key)) speed.set(Number(key))
 	}
 

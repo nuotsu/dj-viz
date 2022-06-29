@@ -2,7 +2,7 @@
 	style:--disc="{$discValue}deg"
 	on:mousedown={() => $discActive = true}
 	on:mouseup={() => $discActive = false}
-	on:wheel={wheel}
+	on:wheel={onWheel}
 >
 	<input type="range" hidden
 		bind:value={$discValue}
@@ -46,7 +46,7 @@
 
 	let spin
 
-	function wheel(e) {
+	function onWheel(e) {
 		e.preventDefault()
 
 		if (spin) clearTimeout(spin)

@@ -1,4 +1,4 @@
-<Knob title="saturation"
+<Knob title="saturation" shortcut="s"
 	bind:value={$saturation}
 	min={0} max={5}
 />

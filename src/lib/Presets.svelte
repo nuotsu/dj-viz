@@ -1,13 +1,11 @@
+<svelte:window on:keydown={onKeydown} />
+
 <label>
-	<select on:change={onChange}>
-		<option value={JSON.stringify(DEFAULTS)} default selected>
-			default
-		</option>
+	<select bind:this={select} on:change={onChange}>
+		<option value={defaults()} default selected>default</option>
 
 		{#each Object.entries(presets) as [name, value]}
-			<option value={JSON.stringify({ ...DEFAULTS, ...value })}>
-				{name}
-			</option>
+			<option value={defaults(value)}>{name}</option>
 		{/each}
 	</select>
 </label>
@@ -18,18 +16,33 @@
 		text-align: center;
 	}
 
+	label:focus-within select {
+		@apply focus;
+	}
+
 	select {
 		background-color: transparent
 	}
 </style>
 
 <script>
-	import mixers, { DEFAULTS } from '$lib/mixers'
+	import mixers, { SOUND_DEFAULTS, CAMERA_DEFAULTS } from '$lib/mixers'
+
+	let select
+
+	const defaults = values => JSON.stringify({
+		...SOUND_DEFAULTS,
+		...values
+	})
 
 	function onChange({ target }) {
 		for (let [name, value] of Object.entries(JSON.parse(target.value))) {
 			mixers[name].set(value)
 		}
+	}
+
+	function onKeydown({ key }) {
+		if (key == 'p') select.focus()
 	}
 
 	/** @type {import('../app').Preset} */

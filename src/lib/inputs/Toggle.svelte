@@ -1,4 +1,4 @@
-<svelte:window on:keydown={keydown} />
+<svelte:window on:keydown={onKeydown} />
 
 <label>
 	<input type="checkbox" bind:checked hidden />
@@ -37,7 +37,7 @@
 <script>
 	export let title, shortcut, checked
 
-	function keydown({ key }) {
+	function onKeydown({ key }) {
 		if (key === shortcut) checked = !checked
 	}
 </script>

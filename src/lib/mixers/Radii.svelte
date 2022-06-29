@@ -1,6 +1,6 @@
 <Knob title={$invert ? 'outer' : 'inner'}
 	bind:value={$min}
-	min={0} max={99}
+	min={0} max={100}
 	shortcut="["
 />
 
@@ -8,7 +8,14 @@
 	bind:value={$max}
 	min={1} max={100}
 	shortcut="]"
+	invalid={$max <= $min}
 />
+
+<script>
+	$: if ($max <= $min) {
+		$max = $min
+	}
+</script>
 
 <script context="module">
 	import Knob from '../inputs/Knob.svelte'
