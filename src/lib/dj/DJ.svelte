@@ -29,8 +29,8 @@
 </style>
 
 <script>
-	import { camera } from '$lib/controls/Camera.svelte'
-	import { sound } from '$lib/controls/Sound.svelte'
+	import { camera } from '$$/controls/Camera.svelte'
+	import { sound } from '$$/controls/Sound.svelte'
 
 	import AudioAnalyzer from './AudioAnalyzer.svelte'
 	import Turntable from './Turntable.svelte'

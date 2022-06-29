@@ -4,7 +4,7 @@
 />
 
 <script context="module">
-	import Knob from '$lib/inputs/Knob.svelte'
+	import Knob from '$$/inputs/Knob.svelte'
 	import { writable } from 'svelte/store'
 
 	export const DEFAULT_OPACITY = 0.4

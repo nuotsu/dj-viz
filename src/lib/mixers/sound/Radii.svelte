@@ -18,7 +18,7 @@
 </script>
 
 <script context="module">
-	import Knob from '../inputs/Knob.svelte'
+	import Knob from '../../inputs/Knob.svelte'
 	import { invert } from './Invert.svelte'
 	import { writable } from 'svelte/store'
 

@@ -1,13 +1,13 @@
-import { spokes, DEFAULT_SPOKES } from './Spokes.svelte'
-import { spread, DEFAULT_SPREAD } from './Spread.svelte'
-import { offset, DEFAULT_OFFSET } from './Offset.svelte'
-import { width, DEFAULT_WIDTH } from './Width.svelte'
-import { speed, DEFAULT_SPEED } from './Speed.svelte'
-import { min, max, DEFAULT_MIN, DEFAULT_MAX } from './Radii.svelte'
-import { invert, DEFAULT_INVERT } from './Invert.svelte'
-import { mirror, DEFAULT_MIRROR } from './Mirror.svelte'
-import { opacity, DEFAULT_OPACITY } from './Opacity.svelte'
-import { saturation, DEFAULT_SATURATION } from './Saturation.svelte'
+import { spokes, DEFAULT_SPOKES } from './sound/Spokes.svelte'
+import { spread, DEFAULT_SPREAD } from './sound/Spread.svelte'
+import { offset, DEFAULT_OFFSET } from './sound/Offset.svelte'
+import { width, DEFAULT_WIDTH } from './sound/Width.svelte'
+import { speed, DEFAULT_SPEED } from './sound/Speed.svelte'
+import { min, max, DEFAULT_MIN, DEFAULT_MAX } from './sound/Radii.svelte'
+import { invert, DEFAULT_INVERT } from './sound/Invert.svelte'
+import { mirror, DEFAULT_MIRROR } from './camera/Mirror.svelte'
+import { opacity, DEFAULT_OPACITY } from './camera/Opacity.svelte'
+import { saturation, DEFAULT_SATURATION } from './camera/Saturation.svelte'
 
 const SOUND_DEFAULTS = {
 	spokes: DEFAULT_SPOKES,
@@ -21,9 +21,9 @@ const SOUND_DEFAULTS = {
 }
 
 const CAMERA_DEFAULTS = {
-	mirror: DEFAULT_MIRROR,
 	opacity: DEFAULT_OPACITY,
 	saturation: DEFAULT_SATURATION,
+	mirror: DEFAULT_MIRROR,
 }
 
 export {

@@ -5,7 +5,6 @@
 		<summary>🎛</summary>
 
 		<Controls/>
-		<Presets/>
 		<Mixers/>
 	</details>
 </main>
@@ -28,6 +27,7 @@
 		position: fixed;
 		left: 0;
 		bottom: 0;
+		padding: 0.5rem;
 	}
 
 	details:not([open]) summary:not(:is(:hover, :focus)) {
@@ -36,8 +36,7 @@
 </style>
 
 <script>
-	import DJ from '$lib/dj/DJ.svelte'
-	import Controls from '$lib/controls/Controls.svelte'
-	import Presets from '$lib/Presets.svelte'
-	import Mixers from '$lib/mixers/Mixers.svelte'
+	import DJ from '$$/dj/DJ.svelte'
+	import Controls from '$$/controls/Controls.svelte'
+	import Mixers from '$$/mixers/Mixers.svelte'
 </script>

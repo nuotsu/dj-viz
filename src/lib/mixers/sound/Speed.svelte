@@ -6,7 +6,7 @@
 />
 
 <script context="module">
-	import Knob from '../inputs/Knob.svelte'
+	import Knob from '../../inputs/Knob.svelte'
 	import { writable } from 'svelte/store'
 
 	const nums = Array.from(Array(10).keys()).map(String)

@@ -5,7 +5,7 @@
 />
 
 <script context="module">
-	import Toggle from '$lib/inputs/Toggle.svelte'
+	import Toggle from '$$/inputs/Toggle.svelte'
 	import { writable } from 'svelte/store'
 
 	export const DEFAULT_INVERT = false

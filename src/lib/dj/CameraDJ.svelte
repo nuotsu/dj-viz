@@ -29,9 +29,9 @@
 </style>
 
 <script>
-	import { mirror } from '$lib/mixers/Mirror.svelte'
-	import { opacity } from '$lib/mixers/Opacity.svelte'
-	import { saturation } from '$lib/mixers/Saturation.svelte'
+	import { mirror } from '$$/mixers/camera/Mirror.svelte'
+	import { opacity } from '$$/mixers/camera/Opacity.svelte'
+	import { saturation } from '$$/mixers/camera/Saturation.svelte'
 
 	export let stream
 

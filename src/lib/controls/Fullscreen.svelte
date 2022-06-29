@@ -1,6 +1,6 @@
 <button
-	class:off={!fullscreen} class="focus-visible:focus"
-	title="Fullscreen"
+	class:off={!fullscreen}
+	class="focus-visible:focus"
 	on:click={onClick}
 >
 	📺

@@ -1,5 +1,5 @@
 <figure
-	style:color={$discColor}
+	style:color={$frequencyColor}
 	style:--width="{$width}px"
 	style:--dir={$invert ? 'bottom' : 'top'}
 	style:--min="{$min}%"
@@ -43,11 +43,11 @@
 </style>
 
 <script context="module">
-	import { discColor } from '$lib/mixers/colors/DiscColor.svelte'
-	import { spread } from '$lib/mixers/Spread.svelte'
-	import { width } from '$lib/mixers/Width.svelte'
-	import { min, max } from '$lib/mixers/Radii.svelte'
-	import { invert } from '$lib/mixers/Invert.svelte'
+	import { frequencyColor } from '$$/mixers/color/FrequencyColor.svelte'
+	import { spread } from '$$/mixers/sound/Spread.svelte'
+	import { width } from '$$/mixers/sound/Width.svelte'
+	import { min, max } from '$$/mixers/sound/Radii.svelte'
+	import { invert } from '$$/mixers/sound/Invert.svelte'
 	import { writable } from 'svelte/store'
 
 	export const bars = writable([])

@@ -13,6 +13,7 @@
 <script>
 	import { onMount } from 'svelte'
 	import { analyzer } from './AudioAnalyzer.svelte'
+	import { timeDomainColor } from '$$/mixers/color/TimeDomainColor.svelte'
 
 	let canvas, frame
 
@@ -31,7 +32,7 @@
 		ctx.fillStyle = '#000'
 		ctx.fillRect(0, 0, canvas.width, canvas.height)
 		ctx.lineWidth = 1
-		ctx.strokeStyle = '#fff'
+		ctx.strokeStyle = $timeDomainColor
 		ctx.beginPath()
 		var sliceWidth = canvas.width * 1 / bufferLength
 		var x = 0

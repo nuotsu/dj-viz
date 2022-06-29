@@ -21,12 +21,12 @@
 	}
 
 	select {
-		background-color: transparent
+		background-color: transparent;
 	}
 </style>
 
 <script>
-	import mixers, { SOUND_DEFAULTS, CAMERA_DEFAULTS } from '$lib/mixers/mixers'
+	import mixers, { SOUND_DEFAULTS } from '$$/mixers/mixers'
 
 	let select
 
@@ -45,7 +45,7 @@
 		if (key == 'p') select.focus()
 	}
 
-	/** @type {import('../app').Preset} */
+	/** @type {import('$/app').Preset} */
 	let presets = {
 		lite: { spokes: 768, spread: 4, speed: 0.5, },
 		clock: { spokes: 240, spread: 20, width: 3, speed: 0.1, min: 0, max: 24, invert: true, },
