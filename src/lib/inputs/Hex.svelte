@@ -6,6 +6,13 @@
 	{label}
 </label>
 
+<style>
+	label:active hex {
+		text-decoration: underline;
+		text-decoration-style: dashed;
+	}
+</style>
+
 <script>
 	export let label, value
 </script>

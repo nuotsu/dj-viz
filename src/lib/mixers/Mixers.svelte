@@ -1,12 +1,11 @@
 <nav>
-	<fieldset id="color" disabled={!$sound}>
-		<legend>🎨</legend>
+	<InputSet name="🎨" vertical disabled={!$sound}>
 		<FrequencyColor/>
 		<TimeDomainColor/>
-	</fieldset>
+	</InputSet>
 
-	<fieldset disabled={!$sound}>
-		<legend>🎧<SoundPresets/></legend>
+	<InputSet name="🎧" disabled={!$sound}>
+		<SoundPresets slot="preset" />
 		<Spokes/>
 		<Spread/>
 		<Offset/>
@@ -14,14 +13,13 @@
 		<Speed/>
 		<Radii/>
 		<Invert/>
-	</fieldset>
+	</InputSet>
 
-	<fieldset disabled={!$camera}>
-		<legend>📹</legend>
+	<InputSet name="📹" disabled={!$camera}>
 		<Opacity/>
 		<Saturation/>
 		<Mirror/>
-	</fieldset>
+	</InputSet>
 </nav>
 
 <style>
@@ -31,31 +29,12 @@
 		justify-content: center;
 		gap: 1ch;
 	}
-
-	fieldset {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 1ch;
-		padding: 0 1ch;
-		border: 1px solid #fff2;
-	}
-
-	fieldset[disabled] {
-		pointer-events: none;
-		opacity: 0.2;
-	}
-
-	legend {
-		display: flex;
-		gap: 0.5ch;
-		margin-bottom: 0.5ch;
-	}
 </style>
 
 <script>
 	import { camera } from '$$/controls/Camera.svelte'
 	import { sound } from '$$/controls/Sound.svelte'
+	import InputSet from '$lib/inputs/InputSet.svelte'
 
 	import FrequencyColor from './color/FrequencyColor.svelte'
 	import TimeDomainColor from './color/TimeDomainColor.svelte'
