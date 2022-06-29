@@ -26,7 +26,7 @@
 </style>
 
 <script>
-	import mixers, { SOUND_DEFAULTS, CAMERA_DEFAULTS } from '$lib/mixers'
+	import mixers, { SOUND_DEFAULTS, CAMERA_DEFAULTS } from '$lib/mixers/mixers'
 
 	let select
 

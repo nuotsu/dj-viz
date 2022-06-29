@@ -1,4 +1,4 @@
-<Knob title="spread" shortcut="-"
+<Knob title="spread" shortcut="="
 	bind:value={$spread}
 	min={1} max={20}
 	factor={0.08}

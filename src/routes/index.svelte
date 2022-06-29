@@ -29,6 +29,10 @@
 		left: 0;
 		bottom: 0;
 	}
+
+	details:not([open]) summary:not(:is(:hover, :focus)) {
+		opacity: 0;
+	}
 </style>
 
 <script>

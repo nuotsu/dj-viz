@@ -1,5 +1,5 @@
 <button
-	class:off={!$camera}
+	class:off={!$camera} class="focus-visible:focus"
 	title="Camera {$camera ? 'on' : 'off'}"
 	on:click={() => { $camera = !$camera }}
 >

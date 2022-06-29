@@ -1,5 +1,10 @@
 <nav>
 	<fieldset disabled={!$sound}>
+		<legend>🎨</legend>
+		<DiscColor/>
+	</fieldset>
+
+	<fieldset disabled={!$sound}>
 		<legend>🎧</legend>
 		<Spokes/>
 		<Spread/>
@@ -45,6 +50,7 @@
 	import { camera } from '$lib/controls/Camera.svelte'
 	import { sound } from '$lib/controls/Sound.svelte'
 
+	import DiscColor from './colors/DiscColor.svelte'
 	import Spokes from './Spokes.svelte'
 	import Spread from './Spread.svelte'
 	import Offset from './Offset.svelte'

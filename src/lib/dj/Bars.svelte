@@ -1,4 +1,5 @@
 <figure
+	style:color={$discColor}
 	style:--width="{$width}px"
 	style:--dir={$invert ? 'bottom' : 'top'}
 	style:--min="{$min}%"
@@ -42,6 +43,7 @@
 </style>
 
 <script context="module">
+	import { discColor } from '$lib/mixers/colors/DiscColor.svelte'
 	import { spread } from '$lib/mixers/Spread.svelte'
 	import { width } from '$lib/mixers/Width.svelte'
 	import { min, max } from '$lib/mixers/Radii.svelte'

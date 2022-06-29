@@ -1,7 +1,7 @@
 <Knob title="spokes" shortcut="\"
 	bind:value={$spokes}
 	min={1} max={SPOKES_MAX}
-	factor={0.2}
+	factor={0.5}
 	toFixed={0}
 />
 

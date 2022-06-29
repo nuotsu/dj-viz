@@ -1,5 +1,5 @@
 <button
-	class:off={!fullscreen}
+	class:off={!fullscreen} class="focus-visible:focus"
 	title="Fullscreen"
 	on:click={onClick}
 >

@@ -1,5 +1,5 @@
 <button
-	class:off={!$sound}
+	class:off={!$sound} class="focus-visible:focus"
 	title="Sound {$sound ? 'on' : 'off'}"
 	on:click={() => { $sound = !$sound }}
 >
