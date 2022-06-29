@@ -1,12 +1,10 @@
-<audio bind:this={audio} autoplay />
+<audio use:srcObject={stream} autoplay crossorigin="anonymous" />
 
 <script>
 	export let stream
 
-	let audio
-
-	$: if (audio && audio?.srcObject !== stream) {
-		audio.srcObject = stream
+	function srcObject(node, stream) {
+		node.srcObject = stream
 
 		let audioCtx = new AudioContext()
 
@@ -14,8 +12,16 @@
 		$analyzer.connect(audioCtx.destination)
 
 		audioCtx
-			.createMediaElementSource(audio)
+			.createMediaElementSource(node)
 			.connect($analyzer)
+
+		return {
+			update(newStream) {
+				if (node.srcObject != newStream) {
+					node.srcObject = newStream
+				}
+			}
+		}
 	}
 </script>
 

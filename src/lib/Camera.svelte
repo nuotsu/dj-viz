@@ -1,4 +1,7 @@
-<button on:click={() => { $camera = !$camera }}>
+<button
+	title="Camera {$camera ? 'on' : 'off'}"
+	on:click={() => { $camera = !$camera }}
+>
 	🤳
 </button>
 

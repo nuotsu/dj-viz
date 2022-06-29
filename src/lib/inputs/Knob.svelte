@@ -1,5 +1,6 @@
 <script>
-	export let title, shortcut, value, min, max, step, factor, toFixed = 1, disabled
+	export let title, shortcut, value, min, max
+	export let step = 1, factor = null, toFixed = 1, disabled = false
 
 	let input
 
@@ -82,7 +83,7 @@
 		position: absolute;
 		left: 50%;
 		top: 0;
-		translate: -50% 0;
+		transform: translate(-50%, 0);
 		width: 1px;
 		height: 100%;
 		rotate: calc(var(--progress) * 1turn);

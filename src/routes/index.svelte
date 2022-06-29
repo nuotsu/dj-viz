@@ -19,13 +19,8 @@
 		{/if}
 	</section>
 
-	<nav>
-		<Sound/>
-		<Camera/>
-		<Fullscreen/>
-	</nav>
-
 	<Controls/>
+	<Mixers/>
 </main>
 
 <style>
@@ -34,12 +29,6 @@
 		grid-template-rows: 1fr auto auto;
 		gap: 0.5rem;
 		min-height: 100vh;
-	}
-
-	nav {
-		display: flex;
-		justify-content: center;
-		gap: 0.5rem;
 	}
 
 	section {
@@ -52,17 +41,17 @@
 </style>
 
 <script>
-	import Camera, { camera } from '$lib/Camera.svelte'
-	import Sound, { sound } from '$lib/Sound.svelte'
-	import Fullscreen from '$/lib/Fullscreen.svelte'
+	import { camera } from '$lib/Camera.svelte'
+	import { sound } from '$lib/Sound.svelte'
 
 	import AudioAnalyzer from '$lib/AudioAnalyzer.svelte'
-	import Turntable from '$/lib/controls/Turntable.svelte'
+	import Turntable from '$/lib/mixers/Turntable.svelte'
 	import CameraDJ from '$lib/CameraDJ.svelte'
 	import FrequencyDJ from '$lib/FrequencyDJ.svelte'
 	import TimeDomainDJ from '$lib/TimeDomainDJ.svelte'
 
 	import Controls from '$lib/controls/Controls.svelte'
+	import Mixers from '$lib/mixers/Mixers.svelte'
 
 	async function getMedia(constraints) {
 		if ('navigator' in window) {

@@ -1,6 +1,6 @@
 <figure style:scale="{$mirror ? -1 : 1} 1">
 	<video autoplay
-		bind:this={video}
+		use:srcObject={stream}
 		style:opacity={$opacity}
 	>
 		<track kind="captions" />
@@ -29,14 +29,12 @@
 </style>
 
 <script>
-	import { mirror } from './controls/Mirror.svelte'
-	import { opacity } from './controls/Opacity.svelte'
+	import { mirror } from './mixers/Mirror.svelte'
+	import { opacity } from './mixers/Opacity.svelte'
 
 	export let stream
 
-	let video
-
-	$: if (video && video.srcObject !== stream) {
-		video.srcObject = stream
+	function srcObject(node, stream) {
+		node.srcObject = stream
 	}
 </script>

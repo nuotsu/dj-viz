@@ -1,4 +1,7 @@
-<button on:click={() => { $sound = !$sound }}>
+<button
+	title="Sound {$sound ? 'on' : 'off'}"
+	on:click={() => { $sound = !$sound }}
+>
 	🎧
 </button>
 
