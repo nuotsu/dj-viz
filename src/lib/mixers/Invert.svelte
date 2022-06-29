@@ -7,7 +7,7 @@
 
 <script context="module">
 	import Toggle from '$lib/inputs/Toggle.svelte'
-	import { sound } from '$lib/Sound.svelte'
+	import { sound } from '$lib/controls/Sound.svelte'
 	import { writable } from 'svelte/store'
 
 	export const invert = writable(false)

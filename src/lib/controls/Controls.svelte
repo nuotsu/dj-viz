@@ -14,7 +14,7 @@
 </style>
 
 <script>
-	import Camera from '$lib/Camera.svelte'
-	import Sound from '$lib/Sound.svelte'
-	import Fullscreen from '$/lib/Fullscreen.svelte'
+	import Camera from './Camera.svelte'
+	import Sound from './Sound.svelte'
+	import Fullscreen from './Fullscreen.svelte'
 </script>

@@ -4,10 +4,10 @@
 	import { onMount } from 'svelte'
 	import { analyzer } from './AudioAnalyzer.svelte'
 	import Bars, { bars } from './Bars.svelte'
-	import { discValue, discActive } from './mixers/Turntable.svelte'
-	import { spokes } from './mixers/Spokes.svelte'
-	import { offset } from './mixers/Offset.svelte'
-	import { speed } from './mixers/Speed.svelte'
+	import { discValue, discActive } from './Turntable.svelte'
+	import { spokes } from '$lib/mixers/Spokes.svelte'
+	import { offset } from '$lib/mixers/Offset.svelte'
+	import { speed } from '$lib/mixers/Speed.svelte'
 
 	let frame
 	let { round: r } = Math

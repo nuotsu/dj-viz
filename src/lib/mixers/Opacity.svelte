@@ -6,9 +6,9 @@
 
 <script context="module">
 	import Knob from '$lib/inputs/Knob.svelte'
+	import { sound } from '$lib/controls/Sound.svelte'
+	import { camera } from '$lib/controls/Camera.svelte'
 	import { writable } from 'svelte/store'
-	import { sound } from '$lib/Sound.svelte'
-	import { camera } from '$lib/Camera.svelte'
 
 	export const opacity = writable(0.4)
 </script>

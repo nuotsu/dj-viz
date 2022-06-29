@@ -29,8 +29,8 @@
 </style>
 
 <script>
-	import { mirror } from './mixers/Mirror.svelte'
-	import { opacity } from './mixers/Opacity.svelte'
+	import { mirror } from '$lib/mixers/Mirror.svelte'
+	import { opacity } from '$lib/mixers/Opacity.svelte'
 
 	export let stream
 

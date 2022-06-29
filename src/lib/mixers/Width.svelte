@@ -6,7 +6,7 @@
 
 <script context="module">
 	import Knob from '../inputs/Knob.svelte'
-	import { sound } from '$lib/Sound.svelte'
+	import { sound } from '$lib/controls/Sound.svelte'
 	import { writable } from 'svelte/store'
 
 	export const width = writable(1)

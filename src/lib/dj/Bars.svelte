@@ -42,11 +42,10 @@
 </style>
 
 <script context="module">
-	import { spokes } from './mixers/Spokes.svelte'
-	import { spread } from './mixers/Spread.svelte'
-	import { width } from './mixers/Width.svelte'
-	import { min, max } from './mixers/Radii.svelte'
-	import { invert } from './mixers/Invert.svelte'
+	import { spread } from '$lib/mixers/Spread.svelte'
+	import { width } from '$lib/mixers/Width.svelte'
+	import { min, max } from '$lib/mixers/Radii.svelte'
+	import { invert } from '$lib/mixers/Invert.svelte'
 	import { writable } from 'svelte/store'
 
 	export const bars = writable([])
