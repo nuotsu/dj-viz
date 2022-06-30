@@ -11,6 +11,7 @@ declare namespace App {
 
 export interface Preset {
 	[key: string]: {
+		// sound
 		spokes?: number
 		spread?: number
 		offset?: number
@@ -18,9 +19,12 @@ export interface Preset {
 		speed?: number
 		min?: number
 		max?: number
-		invert?: boolean
-		mirror?: boolean
+		flip?: boolean
+
+		// camera
 		opacity?: number
 		saturation?: number
+		invert?: boolean
+		mirror?: boolean
 	}
 }

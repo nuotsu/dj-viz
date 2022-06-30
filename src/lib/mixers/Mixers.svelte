@@ -12,12 +12,14 @@
 		<Width/>
 		<Speed/>
 		<Radii/>
-		<Invert/>
+		<Flip/>
 	</InputSet>
 
 	<InputSet name="📹" disabled={!$camera}>
+		<CameraPresets slot="preset" />
 		<Opacity/>
 		<Saturation/>
+		<Invert/>
 		<Mirror/>
 	</InputSet>
 </nav>
@@ -34,7 +36,7 @@
 <script>
 	import { camera } from '$$/controls/Camera.svelte'
 	import { sound } from '$$/controls/Sound.svelte'
-	import InputSet from '$lib/inputs/InputSet.svelte'
+	import InputSet from '$$/inputs/InputSet.svelte'
 
 	import FrequencyColor from './color/FrequencyColor.svelte'
 	import TimeDomainColor from './color/TimeDomainColor.svelte'
@@ -46,9 +48,11 @@
 	import Width from './sound/Width.svelte'
 	import Speed from './sound/Speed.svelte'
 	import Radii from './sound/Radii.svelte'
-	import Invert from './sound/Invert.svelte'
+	import Flip from './sound/Flip.svelte'
 
-	import Mirror from './camera/Mirror.svelte'
+	import CameraPresets from '$$/presets/CameraPresets.svelte'
 	import Opacity from './camera/Opacity.svelte'
 	import Saturation from './camera/Saturation.svelte'
+	import Invert from './camera/Invert.svelte'
+	import Mirror from './camera/Mirror.svelte'
 </script>

@@ -2,7 +2,7 @@
 	<video autoplay
 		use:srcObject={stream}
 		style:opacity={$opacity}
-		style:filter="saturate({$saturation})"
+		style:filter="saturate({$saturation}) invert({$invert ? 1 : 0})"
 	>
 		<track kind="captions" />
 	</video>
@@ -29,9 +29,10 @@
 </style>
 
 <script>
-	import { mirror } from '$$/mixers/camera/Mirror.svelte'
 	import { opacity } from '$$/mixers/camera/Opacity.svelte'
 	import { saturation } from '$$/mixers/camera/Saturation.svelte'
+	import { mirror } from '$$/mixers/camera/Mirror.svelte'
+	import { invert } from '$$/mixers/camera/Invert.svelte'
 
 	export let stream
 

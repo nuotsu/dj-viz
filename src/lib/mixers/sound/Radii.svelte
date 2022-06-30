@@ -1,10 +1,10 @@
-<Knob title={$invert ? 'outer' : 'inner'}
+<Knob title={$flip ? 'outer' : 'inner'}
 	bind:value={$min}
 	min={0} max={100}
 	shortcut="["
 />
 
-<Knob title={$invert ? 'inner' : 'outer'}
+<Knob title={$flip ? 'inner' : 'outer'}
 	bind:value={$max}
 	min={1} max={100}
 	shortcut="]"
@@ -19,7 +19,7 @@
 
 <script context="module">
 	import Knob from '../../inputs/Knob.svelte'
-	import { invert } from './Invert.svelte'
+	import { flip } from './Flip.svelte'
 	import { writable } from 'svelte/store'
 
 	export const DEFAULT_MIN = 50

@@ -1,7 +1,7 @@
 <figure
 	style:color={$frequencyColor}
 	style:--width="{$width}px"
-	style:--dir={$invert ? 'bottom' : 'top'}
+	style:--dir={$flip ? 'bottom' : 'top'}
 	style:--min="{$min}%"
 	>
 	{#each $bars as bar, i}
@@ -47,7 +47,7 @@
 	import { spread } from '$$/mixers/sound/Spread.svelte'
 	import { width } from '$$/mixers/sound/Width.svelte'
 	import { min, max } from '$$/mixers/sound/Radii.svelte'
-	import { invert } from '$$/mixers/sound/Invert.svelte'
+	import { flip } from '$lib/mixers/sound/Flip.svelte'
 	import { writable } from 'svelte/store'
 
 	export const bars = writable([])

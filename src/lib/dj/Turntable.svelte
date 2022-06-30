@@ -14,6 +14,7 @@
 
 <style>
 	label {
+		cursor: grab;
 		position: relative;
 		z-index: 1;
 		display: grid;
@@ -23,6 +24,10 @@
 		overflow: hidden;
 		transform: rotate(var(--disc));
 		will-change: transform;
+	}
+
+	label:active {
+		cursor: grabbing;
 	}
 
 	@screen md {

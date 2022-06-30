@@ -11,7 +11,13 @@
 	<knob style:--progress={(value - min) / (max - min)}>
 		<indicator/>
 
-		<output class="center">{value?.toFixed(toFixed)}</output>
+		<output class="center">
+			{#if $nerdMode}
+				{value?.toFixed(toFixed)}
+			{:else}
+				{shortcut}
+			{/if}
+		</output>
 	</knob>
 
 	<span>{title}</span>
@@ -83,6 +89,8 @@
 </style>
 
 <script>
+	import { nerdMode } from '$$/controls/NerdMode.svelte'
+
 	export let title, shortcut, value, min, max, invalid
 	export let step = 1, factor = null, toFixed = 1
 

@@ -3,7 +3,11 @@
 <label>
 	<input type="checkbox" bind:checked hidden />
 
-	<toggle/>
+	<toggle>
+		{#if !$nerdMode}
+			<output>{shortcut}</output>
+		{/if}
+	</toggle>
 
 	{title}
 </label>
@@ -15,7 +19,9 @@
 	}
 
 	toggle {
-		display: block;
+		position: relative;
+		display: grid;
+		place-content: center;
 		aspect-ratio: 1;
 		width: var(--input-size);
 		border: 1px solid;
@@ -26,15 +32,20 @@
 
 	input:checked + toggle::before {
 		content: '';
-		display: block;
-		width: 100%;
-		height: 100%;
+		position: absolute;
+		inset: 0.5em;
 		border-radius: 100%;
 		background-color: currentColor;
+	}
+
+	output {
+		mix-blend-mode: difference;
 	}
 </style>
 
 <script>
+	import { nerdMode } from '$$/controls/NerdMode.svelte'
+
 	export let title, shortcut, checked
 
 	function onKeydown({ key }) {

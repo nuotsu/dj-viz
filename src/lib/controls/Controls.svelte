@@ -2,6 +2,7 @@
 	<Sound/>
 	<Camera/>
 	<Fullscreen/>
+	<NerdMode/>
 </nav>
 
 <style>
@@ -22,4 +23,5 @@
 	import Camera from './Camera.svelte'
 	import Sound from './Sound.svelte'
 	import Fullscreen from './Fullscreen.svelte'
+	import NerdMode from './NerdMode.svelte'
 </script>
