@@ -1,8 +1,4 @@
-<KnobToggle
-	label="mirror"
-	shortcut="x"
-	bind:checked={$mirror}
-/>
+<KnobToggle label="mirror" key="x" value={mirror} />
 
 <script context="module">
 	import KnobToggle from '$lib/inputs/KnobToggle.svelte'

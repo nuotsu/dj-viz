@@ -1,15 +1,13 @@
-<svelte:window on:keydown={e => onKeydown(e, value)} />
+<HotKey {key} toggle={value} />
 
 <label class:off={!$value}>
-	<input type="checkbox" hidden bind:checked={value} />
+	<input type="checkbox" hidden bind:checked={$value} />
 
 	{label}
 </label>
 
 <script>
-	export let label, shortcut, value
+	import HotKey from './HotKey.svelte'
 
-	function onKeydown(e, value) {
-		if (e.key === shortcut) value.update(v => !v)
-	}
+	export let label, key, value
 </script>

@@ -1,8 +1,4 @@
-<KnobToggle
-	label="flip"
-	shortcut="f"
-	bind:checked={$flip}
-/>
+<KnobToggle label="flip" key="f" value={flip} />
 
 <script context="module">
 	import KnobToggle from '$lib/inputs/KnobToggle.svelte'

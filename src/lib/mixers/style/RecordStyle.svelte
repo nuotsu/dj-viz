@@ -1,8 +1,4 @@
-<Toggle
-	label="💿"
-	shortcut="d"
-	value={recordStyle}
-/>
+<Toggle label="💿" key="d" value={recordStyle} />
 
 <script context="module">
 	import Toggle from '$lib/inputs/Toggle.svelte'

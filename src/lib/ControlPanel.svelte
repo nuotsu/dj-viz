@@ -1,4 +1,4 @@
-<svelte:window on:keydown={onKeydown} />
+<HotKey key="~" callback={() => { open = !open }} />
 
 <details {open}>
 	<summary>🎛</summary>
@@ -26,9 +26,7 @@
 </style>
 
 <script>
-	let open = true
+	import HotKey from './inputs/HotKey.svelte'
 
-	function onKeydown({ key }) {
-		if (key === '~') open = !open
-	}
+	let open = true
 </script>

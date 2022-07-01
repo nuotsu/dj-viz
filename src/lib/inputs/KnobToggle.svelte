@@ -1,11 +1,11 @@
-<svelte:window on:keydown={onKeydown} />
+<HotKey {key} toggle={value} />
 
 <label>
-	<input type="checkbox" hidden bind:checked />
+	<input type="checkbox" hidden bind:checked={$value} />
 
 	<toggle>
 		{#if !$nerdMode}
-			<output>{shortcut}</output>
+			<output>{key}</output>
 		{/if}
 	</toggle>
 
@@ -44,11 +44,8 @@
 </style>
 
 <script>
+	import HotKey from './HotKey.svelte'
 	import { nerdMode } from '$$/controls/NerdMode.svelte'
 
-	export let label, shortcut, checked
-
-	function onKeydown({ key }) {
-		if (key === shortcut) checked = !checked
-	}
+	export let label, key, value
 </script>

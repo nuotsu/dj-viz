@@ -1,8 +1,4 @@
-<KnobToggle
-	label="invert"
-	shortcut="i"
-	bind:checked={$invert}
-/>
+<KnobToggle label="invert" key="i" value={invert} />
 
 <script context="module">
 	import KnobToggle from '$lib/inputs/KnobToggle.svelte'
