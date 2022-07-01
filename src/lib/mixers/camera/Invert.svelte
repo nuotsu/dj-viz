@@ -1,11 +1,11 @@
-<Toggle
-	title="invert"
+<KnobToggle
+	label="invert"
 	shortcut="i"
 	bind:checked={$invert}
 />
 
 <script context="module">
-	import Toggle from '$$/inputs/Toggle.svelte'
+	import KnobToggle from '$lib/inputs/KnobToggle.svelte'
 	import { writable } from 'svelte/store'
 
 	export const DEFAULT_INVERT = false

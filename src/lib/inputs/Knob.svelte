@@ -99,7 +99,7 @@
 	function onWheel(e) {
 		e.preventDefault()
 
-		let delta = e.deltaY * (factor || (max - min) * 0.0025)
+		let delta = e.deltaY * ((!$nerdMode ? 0 : factor) || (max - min) * 0.0025)
 		let newValue = value + delta
 
 		if (newValue > max) {

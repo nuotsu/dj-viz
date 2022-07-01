@@ -1,11 +1,11 @@
-<Toggle
-	title="flip"
+<KnobToggle
+	label="flip"
 	shortcut="f"
 	bind:checked={$flip}
 />
 
 <script context="module">
-	import Toggle from '$$/inputs/Toggle.svelte'
+	import KnobToggle from '$lib/inputs/KnobToggle.svelte'
 	import { writable } from 'svelte/store'
 
 	export const DEFAULT_FLIP = false

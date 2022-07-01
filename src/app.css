@@ -21,6 +21,11 @@
 
 	select {
 		cursor: pointer;
+		background-color: transparent;
+	}
+
+	input {
+		background-color: transparent;
 	}
 
 	summary {
@@ -41,5 +46,10 @@
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
+	}
+
+	.off {
+		opacity: 0.5;
+		filter: grayscale();
 	}
 }

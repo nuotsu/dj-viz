@@ -16,6 +16,8 @@
 
 <style>
 	figure {
+		position: relative;
+		z-index: 1;
 		pointer-events: none;
 		grid-column: 1 / -1;
 		grid-row: 1 / -1;
@@ -43,7 +45,7 @@
 </style>
 
 <script context="module">
-	import { frequencyColor } from '$$/mixers/color/FrequencyColor.svelte'
+	import { frequencyColor } from '$lib/mixers/style/FrequencyColor.svelte'
 	import { spread } from '$$/mixers/sound/Spread.svelte'
 	import { width } from '$$/mixers/sound/Width.svelte'
 	import { min, max } from '$$/mixers/sound/Radii.svelte'

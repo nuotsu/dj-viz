@@ -19,10 +19,6 @@
 	label:focus-within select {
 		@apply focus;
 	}
-
-	select {
-		background-color: transparent;
-	}
 </style>
 
 <script>

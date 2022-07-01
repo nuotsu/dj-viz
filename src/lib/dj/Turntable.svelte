@@ -4,6 +4,10 @@
 	on:mouseup={() => $discActive = false}
 	on:wheel={onWheel}
 >
+	{#if $recordStyle}
+		<RecordStyles />
+	{/if}
+
 	<input type="range" hidden
 		bind:value={$discValue}
 		min={0} max={360}
@@ -44,6 +48,8 @@
 </style>
 
 <script context="module">
+	import { recordStyle } from '$lib/mixers/style/recordStyle.svelte'
+	import RecordStyles from './RecordStyles.svelte'
 	import { writable } from 'svelte/store'
 
 	export const discValue = writable(0)
