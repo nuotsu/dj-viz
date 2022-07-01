@@ -5,5 +5,5 @@
 	import { dev } from '$app/env'
 	import { writable } from 'svelte/store'
 
-	export const sound = writable(false)
+	export const sound = writable(dev)
 </script>
