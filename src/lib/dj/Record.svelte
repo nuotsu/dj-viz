@@ -50,5 +50,5 @@
 
 <script>
 	import { recordLabel } from '$lib/mixers/record/Label.svelte'
-	import RecordLabel from './RecordLabel.svelte'
+	import RecordLabel from './Label.svelte'
 </script>

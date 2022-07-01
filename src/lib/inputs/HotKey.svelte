@@ -9,7 +9,9 @@
 			document.activeElement.type === 'text'
 		)
 
-		if (!key || e.key !== key || focusedOnTextField) return
+		const focusedOnTextarea = document.activeElement.tagName === 'TEXTAREA'
+
+		if (!key || e.key !== key || focusedOnTextField || focusedOnTextarea) return
 
 		!!callback
 			? callback()

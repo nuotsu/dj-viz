@@ -3,7 +3,8 @@
 		<Label/>
 	</InputSet>
 
-	<InputSet name="🎨" vertical disabled={!$sound}>
+	<InputSet name="🎨" vertical disabled={!$record && !$sound}>
+		<LabelColor/>
 		<FrequencyColor/>
 		<TimeDomainColor/>
 	</InputSet>
@@ -44,6 +45,7 @@
 	import InputSet from '$$/inputs/InputSet.svelte'
 
 	import Label from './record/Label.svelte'
+	import LabelColor from './color/LabelColor.svelte'
 	import FrequencyColor from './color/FrequencyColor.svelte'
 	import TimeDomainColor from './color/TimeDomainColor.svelte'
 

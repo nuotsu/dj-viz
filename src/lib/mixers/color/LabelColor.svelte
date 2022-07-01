@@ -1,8 +1,8 @@
-<Hex label="Hz" bind:value={$frequencyColor} />
+<Hex label="label" bind:value={$labelColor} />
 
 <script context="module">
 	import Hex from '$$/inputs/Hex.svelte'
 	import { writable } from 'svelte/store'
 
-	export const frequencyColor = writable('#ffffff')
+	export const labelColor = writable('#ff0000')
 </script>
