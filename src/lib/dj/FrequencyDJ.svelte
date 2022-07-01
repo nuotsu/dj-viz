@@ -15,13 +15,6 @@
 	function jam() {
 		frame = requestAnimationFrame(jam)
 
-		if (!$analyzer) return
-
-		const dataArray = new Uint8Array($analyzer.frequencyBinCount)
-		$analyzer.getByteFrequencyData(dataArray)
-
-		$bars = Array.from(dataArray).slice(r($offset), r($spokes + $offset))
-
 		if (!$discActive) {
 			if ($discValue >= 360) {
 				$discValue %= 360
@@ -31,6 +24,13 @@
 
 			$discValue += $speed
 		}
+
+		if (!$analyzer) return
+
+		const dataArray = new Uint8Array($analyzer.frequencyBinCount)
+		$analyzer.getByteFrequencyData(dataArray)
+
+		$bars = Array.from(dataArray).slice(r($offset), r($spokes + $offset))
 	}
 
 	onMount(() => {
