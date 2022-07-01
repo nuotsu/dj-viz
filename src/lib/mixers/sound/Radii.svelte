@@ -1,13 +1,13 @@
 <Knob title={$flip ? 'outer' : 'inner'}
 	bind:value={$min}
 	min={0} max={100}
-	shortcut="["
+	key="["
 />
 
 <Knob title={$flip ? 'inner' : 'outer'}
 	bind:value={$max}
 	min={1} max={100}
-	shortcut="]"
+	key="]"
 	invalid={$max <= $min}
 />
 

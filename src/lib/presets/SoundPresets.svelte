@@ -1,7 +1,4 @@
-<Preset {presets}
-	defaults={SOUND_DEFAULTS}
-	shortcut="p"
-/>
+<Preset {presets} defaults={SOUND_DEFAULTS} key="p" />
 
 <script>
 	import Preset from './Preset.svelte'

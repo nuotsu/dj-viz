@@ -1,7 +1,4 @@
-<Preset {presets}
-	defaults={CAMERA_DEFAULTS}
-	shortcut="P"
-/>
+<Preset {presets} defaults={CAMERA_DEFAULTS} key="P" />
 
 <script>
 	import Preset from './Preset.svelte'

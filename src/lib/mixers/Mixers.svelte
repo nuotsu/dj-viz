@@ -1,12 +1,11 @@
 <nav>
+	<InputSet name="💿" disabled={!$sound}>
+		<Label/>
+	</InputSet>
+
 	<InputSet name="🎨" vertical disabled={!$sound}>
 		<FrequencyColor/>
 		<TimeDomainColor/>
-	</InputSet>
-
-	<InputSet name="💿" disabled={!$sound}>
-		<RecordStyle/>
-		<RecordLabel/>
 	</InputSet>
 
 	<InputSet name="🎧" disabled={!$sound}>
@@ -43,10 +42,9 @@
 	import { sound } from '$$/controls/Sound.svelte'
 	import InputSet from '$$/inputs/InputSet.svelte'
 
-	import RecordStyle from './style/recordStyle.svelte'
-	import RecordLabel from './style/RecordLabel.svelte'
-	import FrequencyColor from './style/FrequencyColor.svelte'
-	import TimeDomainColor from './style/TimeDomainColor.svelte'
+	import Label from './record/Label.svelte'
+	import FrequencyColor from './color/FrequencyColor.svelte'
+	import TimeDomainColor from './color/TimeDomainColor.svelte'
 
 	import SoundPresets from '$$/presets/SoundPresets.svelte'
 	import Spokes from './sound/Spokes.svelte'

@@ -1,4 +1,4 @@
-<Knob title="width" shortcut="w"
+<Knob title="width" key="w"
 	bind:value={$width}
 	min={0.5} max={5} step={0.5}
 />

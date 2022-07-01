@@ -1,11 +1,11 @@
 <label>
 	<input type="text"
-		placeholder="Record label"
+		placeholder="label"
 		bind:value={$recordLabel}
 	/>
 </label>
 
-<script>
+<script context="module">
 	import { writable } from 'svelte/store'
 
 	export const recordLabel = writable('')

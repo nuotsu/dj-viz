@@ -45,7 +45,7 @@
 </style>
 
 <script context="module">
-	import { frequencyColor } from '$lib/mixers/style/FrequencyColor.svelte'
+	import { frequencyColor } from '$lib/mixers/color/FrequencyColor.svelte'
 	import { spread } from '$$/mixers/sound/Spread.svelte'
 	import { width } from '$$/mixers/sound/Width.svelte'
 	import { min, max } from '$$/mixers/sound/Radii.svelte'

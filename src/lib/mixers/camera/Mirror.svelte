@@ -1,4 +1,4 @@
-<KnobToggle label="mirror" key="x" value={mirror} />
+<KnobToggle label="mirror" key="m" value={mirror} />
 
 <script context="module">
 	import KnobToggle from '$lib/inputs/KnobToggle.svelte'

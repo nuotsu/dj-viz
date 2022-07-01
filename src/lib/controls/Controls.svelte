@@ -1,4 +1,5 @@
 <nav>
+	<Record/>
 	<Sound/>
 	<Camera/>
 	<Fullscreen/>
@@ -15,6 +16,7 @@
 </style>
 
 <script>
+	import Record from './Record.svelte'
 	import Camera from './Camera.svelte'
 	import Sound from './Sound.svelte'
 	import Fullscreen from './Fullscreen.svelte'

@@ -1,10 +1,14 @@
 <figure>
-
+	{#if $recordLabel}
+		<RecordLabel/>
+	{/if}
 </figure>
 
 <style>
 	figure {
 		--reflection: #fff2;
+		display: grid;
+		place-content: center;
 		border-radius: 100%;
 		border: 1px solid #fff1;
 	}
@@ -43,3 +47,8 @@
 		}
 	}
 </style>
+
+<script>
+	import { recordLabel } from '$lib/mixers/record/Label.svelte'
+	import RecordLabel from './RecordLabel.svelte'
+</script>

@@ -1,4 +1,4 @@
-<svelte:window on:keydown={onKeydown} />
+<HotKey {key} callback={() => select.focus()} />
 
 <label>
 	<select bind:this={select} on:change={onChange}>
@@ -22,9 +22,10 @@
 </style>
 
 <script>
+	import HotKey from '$lib/inputs/HotKey.svelte'
 	import mixers from '$$/mixers/mixers'
 
-	export let shortcut, presets, defaults
+	export let key, presets, defaults
 
 	let select
 
@@ -37,9 +38,5 @@
 		for (let [name, value] of Object.entries(JSON.parse(target.value))) {
 			mixers[name].set(value)
 		}
-	}
-
-	function onKeydown({ key }) {
-		if (key == shortcut) select.focus()
 	}
 </script>

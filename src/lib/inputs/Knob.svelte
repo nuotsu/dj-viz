@@ -1,4 +1,4 @@
-<svelte:window on:keydown={onKeydown} />
+<HotKey {key} callback={() => input.focus()} />
 
 <label on:wheel={onWheel} on:keydown class:invalid>
 	<input type="range"
@@ -15,7 +15,7 @@
 			{#if $nerdMode}
 				{value?.toFixed(toFixed)}
 			{:else}
-				{shortcut}
+				{key}
 			{/if}
 		</output>
 	</knob>
@@ -89,9 +89,10 @@
 </style>
 
 <script>
+	import HotKey from './HotKey.svelte'
 	import { nerdMode } from '$$/controls/NerdMode.svelte'
 
-	export let title, shortcut, value, min, max, invalid
+	export let title, key, value, min, max, invalid
 	export let step = 1, factor = null, toFixed = 1
 
 	let input
@@ -109,9 +110,5 @@
 		} else {
 			value += delta
 		}
-	}
-
-	function onKeydown({ key }) {
-		if (key === shortcut) input.focus()
 	}
 </script>

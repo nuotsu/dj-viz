@@ -1,4 +1,4 @@
-<Knob title="speed" shortcut="t"
+<Knob title="speed" key="t"
 	bind:value={$speed}
 	on:keydown={onKeydown}
 	min={0} max={10} step={0.05}

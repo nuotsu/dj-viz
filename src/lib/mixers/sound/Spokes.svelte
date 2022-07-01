@@ -1,4 +1,4 @@
-<Knob title="spokes" shortcut="\"
+<Knob title="spokes" key="\"
 	bind:value={$spokes}
 	min={1} max={SPOKES_MAX}
 	factor={0.5}
