@@ -1,12 +1,10 @@
 <HotKey {key} toggle={value} />
 
-<button
-	class:off={!$value}
-	class="focus-visible:focus"
-	on:click={() => { $value = !$value }}
->
+<label class:off={!$value}>
+	<input type="checkbox" hidden bind:checked={$value} />
+
 	{label}
-</button>
+</label>
 
 <script>
 	import HotKey from '$lib/inputs/HotKey.svelte'

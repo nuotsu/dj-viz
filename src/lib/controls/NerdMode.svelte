@@ -1,15 +1,7 @@
-<HotKey key="N" toggle={nerdMode} />
-
-<button
-	class:off={!$nerdMode}
-	class="focus-visible:focus"
-	on:click={() => { $nerdMode = !$nerdMode }}
->
-	🤓
-</button>
+<Control label="🤓" key="N" value={nerdMode} />
 
 <script context="module">
-	import HotKey from '$lib/inputs/HotKey.svelte'
+	import Control from './Control.svelte'
 	import { writable } from 'svelte/store'
 
 	export const nerdMode = writable(false)
