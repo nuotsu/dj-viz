@@ -1,12 +1,7 @@
-<button
-	class:off={!$camera}
-	class="focus-visible:focus"
-	on:click={() => { $camera = !$camera }}
->
-	📹
-</button>
+<Control label="📹" key="C" value={camera} />
 
 <script context="module">
+	import Control from './Control.svelte'
 	import { writable } from 'svelte/store'
 
 	export const camera = writable(false)

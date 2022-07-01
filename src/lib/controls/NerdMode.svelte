@@ -1,4 +1,4 @@
-<HotKey key="n" toggle={nerdMode} />
+<HotKey key="N" toggle={nerdMode} />
 
 <button
 	class:off={!$nerdMode}

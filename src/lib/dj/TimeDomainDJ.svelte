@@ -13,7 +13,7 @@
 <script>
 	import { onMount } from 'svelte'
 	import { analyzer } from './AudioAnalyzer.svelte'
-	import { timeDomainColor } from '$lib/mixers/color/TimeDomainColor.svelte'
+	import { timeDomainColor } from '$$/mixers/color/TimeDomainColor.svelte'
 
 	let canvas, frame
 

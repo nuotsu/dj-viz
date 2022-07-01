@@ -4,6 +4,8 @@
 	export let stream
 
 	function srcObject(node, stream) {
+		if (!stream) return
+
 		node.srcObject = stream
 
 		let audioCtx = new AudioContext()

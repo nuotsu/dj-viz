@@ -1,12 +1,7 @@
-<button
-	class:off={!$sound}
-	class="focus-visible:focus"
-	on:click={() => { $sound = !$sound }}
->
-	🎧
-</button>
+<Control label="🎧" key="S" value={sound} />
 
 <script context="module">
+	import Control from './Control.svelte'
 	import { dev } from '$app/env'
 	import { writable } from 'svelte/store'
 

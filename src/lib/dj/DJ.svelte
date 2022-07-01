@@ -2,20 +2,19 @@
 	{#if $sound}
 		{#await getMedia({ audio: true }) then audioStream}
 			<AudioAnalyzer stream={audioStream} />
-
 			<TimeDomainDJ />
-
-			<Turntable>
-				{#if $camera}
-					{#await getMedia({ video: true }) then videoStream}
-						<CameraDJ stream={videoStream} />
-					{:catch}🙅‍♂️{/await}
-				{/if}
-
-				<FrequencyDJ />
-			</Turntable>
 		{:catch}🙅‍♂️{/await}
 	{/if}
+
+	<Turntable>
+		{#if $camera}
+			{#await getMedia({ video: true }) then videoStream}
+				<CameraDJ stream={videoStream} />
+			{:catch}🙅‍♂️{/await}
+		{/if}
+
+		<FrequencyDJ />
+	</Turntable>
 </section>
 
 <style>

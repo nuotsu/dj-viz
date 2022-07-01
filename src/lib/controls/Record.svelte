@@ -1,15 +1,7 @@
-<HotKey key="d" toggle={record} />
-
-<button
-	class:off={!$record}
-	class="focus-visible:focus"
-	on:click={() => { $record = !$record }}
->
-	💿
-</button>
+<Control label="💿" key="D" value={record} />
 
 <script context="module">
-	import HotKey from '$lib/inputs/HotKey.svelte'
+	import Control from './Control.svelte'
 	import { writable } from 'svelte/store'
 
 	export const record = writable(true)

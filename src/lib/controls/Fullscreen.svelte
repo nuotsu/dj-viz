@@ -1,21 +1,18 @@
-<button
-	class:off={!fullscreen}
-	class="focus-visible:focus"
-	on:click={onClick}
->
-	📺
-</button>
+<Control label="📺" key="F" value={fullscreen} />
 
 <script>
-	let fullscreen = false
+	import { browser } from '$app/env'
 
-	function onClick() {
-		fullscreen = !document.fullscreenElement
-
-		if (!document.fullscreenElement) {
-			document.documentElement.requestFullscreen()
-		} else {
-			document.exitFullscreen()
-		}
+	$: if ($fullscreen) {
+		browser && document.documentElement.requestFullscreen()
+	} else {
+		(browser && document.fullscreenElement) && document.exitFullscreen()
 	}
+</script>
+
+<script context="module">
+	import Control from './Control.svelte'
+	import { writable } from 'svelte/store'
+
+	export const fullscreen = writable(false)
 </script>

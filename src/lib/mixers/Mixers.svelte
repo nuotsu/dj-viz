@@ -1,5 +1,5 @@
 <nav>
-	<InputSet name="💿" disabled={!$sound}>
+	<InputSet name="💿" disabled={!$record}>
 		<Label/>
 	</InputSet>
 
@@ -8,7 +8,7 @@
 		<TimeDomainColor/>
 	</InputSet>
 
-	<InputSet name="🎧" disabled={!$sound}>
+	<InputSet name="🎧" disabled={!$record && !$sound}>
 		<SoundPresets slot="preset" />
 		<Spokes/>
 		<Spread/>
@@ -38,8 +38,9 @@
 </style>
 
 <script>
-	import { camera } from '$$/controls/Camera.svelte'
+	import { record } from '$$/controls/Record.svelte'
 	import { sound } from '$$/controls/Sound.svelte'
+	import { camera } from '$$/controls/Camera.svelte'
 	import InputSet from '$$/inputs/InputSet.svelte'
 
 	import Label from './record/Label.svelte'
