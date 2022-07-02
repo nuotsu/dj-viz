@@ -35,6 +35,7 @@ export interface Mixer {
 	opacity?: number
 	saturation?: number
 	hueRotate?: number
+	contrast?: boolean
 	invert?: boolean
 	mirror?: boolean
 }

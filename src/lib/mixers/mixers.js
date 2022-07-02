@@ -15,6 +15,7 @@ import { flip, DEFAULT_FLIP } from './sound/Flip.svelte'
 import { opacity, DEFAULT_OPACITY } from './camera/Opacity.svelte'
 import { saturation, DEFAULT_SATURATION } from './camera/Saturation.svelte'
 import { hueRotate, DEFAULT_HUE_ROTATE } from './camera/HueRotate.svelte'
+import { contrast, DEFAULT_CONTRAST } from './camera/Contrast.svelte'
 import { invert, DEFAULT_INVERT } from './camera/Invert.svelte'
 import { mirror, DEFAULT_MIRROR } from './camera/Mirror.svelte'
 
@@ -46,6 +47,7 @@ const CAMERA_DEFAULTS = {
 	opacity: DEFAULT_OPACITY,
 	saturation: DEFAULT_SATURATION,
 	hueRotate: DEFAULT_HUE_ROTATE,
+	contrast: DEFAULT_CONTRAST,
 	invert: DEFAULT_INVERT,
 	mirror: DEFAULT_MIRROR,
 }
@@ -76,6 +78,7 @@ export default {
 	opacity,
 	saturation,
 	hueRotate,
+	contrast,
 	invert,
 	mirror,
 }

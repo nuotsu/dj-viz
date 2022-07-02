@@ -1,4 +1,4 @@
-<Preset {presets} {defaults} key="π" />
+<Preset {presets} {defaults} key="P" />
 
 <script>
 	import Preset from './Preset.svelte'

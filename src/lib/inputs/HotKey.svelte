@@ -11,7 +11,13 @@
 
 		const focusedOnTextarea = document.activeElement.tagName === 'TEXTAREA'
 
-		if (!key || e.key !== key || focusedOnTextField || focusedOnTextarea) return
+		if (e.key === 'Escape') {
+			document.activeElement.blur()
+		}
+
+		if (!key || e.key !== key || focusedOnTextField || focusedOnTextarea) {
+			return
+		}
 
 		!!callback
 			? callback()

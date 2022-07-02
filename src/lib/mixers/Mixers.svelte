@@ -31,6 +31,7 @@
 		<Opacity/>
 		<Saturation/>
 		<HueRotate/>
+		<Contrast/>
 		<Invert/>
 		<Mirror/>
 	</InputSet>
@@ -74,6 +75,7 @@
 	import Opacity from './camera/Opacity.svelte'
 	import Saturation from './camera/Saturation.svelte'
 	import HueRotate from './camera/HueRotate.svelte'
+	import Contrast from './camera/Contrast.svelte'
 	import Invert from './camera/Invert.svelte'
 	import Mirror from './camera/Mirror.svelte'
 </script>
