@@ -17,11 +17,11 @@
 
 	<InputSet name="🎧" disabled={!$record && !$sound}>
 		<SoundPresets slot="legend" />
+		<Speed/>
 		<Spokes/>
 		<Spread/>
 		<Offset/>
 		<Width/>
-		<Speed/>
 		<Radii/>
 		<Flip/>
 	</InputSet>

@@ -22,11 +22,11 @@ export interface Mixer {
 	timeDomainColor: string
 
 	// sound
+	speed?: number
 	spokes?: number
 	spread?: number
 	offset?: number
 	width?: number
-	speed?: number
 	min?: number
 	max?: number
 	flip?: boolean

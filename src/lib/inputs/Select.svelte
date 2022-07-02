@@ -15,14 +15,12 @@
 	}
 
 	select {
+		border-radius: 0.25em;
 		@apply transition-all;
 	}
 
 	label:focus-within select {
-		background-color: #fff2;
-		outline: none;
-
-		@apply glow-sm;
+		@apply focus;
 	}
 </style>
 

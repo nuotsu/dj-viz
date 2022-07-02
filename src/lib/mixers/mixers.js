@@ -5,11 +5,11 @@ import { labelBG, DEFAULT_LABEL_BG } from './color/LabelBG.svelte'
 import { labelFG, DEFAULT_LABEL_FG } from './color/LabelFG.svelte'
 import { frequencyColor, DEFAULT_FREQUENCY_COLOR } from './color/FrequencyColor.svelte'
 import { timeDomainColor, DEFAULT_TIME_DOMAIN_COLOR } from './color/TimeDomainColor.svelte'
+import { speed, DEFAULT_SPEED } from './sound/Speed.svelte'
 import { spokes, DEFAULT_SPOKES } from './sound/Spokes.svelte'
 import { spread, DEFAULT_SPREAD } from './sound/Spread.svelte'
 import { offset, DEFAULT_OFFSET } from './sound/Offset.svelte'
 import { width, DEFAULT_WIDTH } from './sound/Width.svelte'
-import { speed, DEFAULT_SPEED } from './sound/Speed.svelte'
 import { min, max, DEFAULT_MIN, DEFAULT_MAX } from './sound/Radii.svelte'
 import { flip, DEFAULT_FLIP } from './sound/Flip.svelte'
 import { opacity, DEFAULT_OPACITY } from './camera/Opacity.svelte'
@@ -33,11 +33,11 @@ const COLOR_DEFAULTS = {
 }
 
 const SOUND_DEFAULTS = {
+	speed: DEFAULT_SPEED,
 	spokes: DEFAULT_SPOKES,
 	spread: DEFAULT_SPREAD,
 	offset: DEFAULT_OFFSET,
 	width: DEFAULT_WIDTH,
-	speed: DEFAULT_SPEED,
 	min: DEFAULT_MIN,
 	max: DEFAULT_MAX,
 	flip: DEFAULT_FLIP,
@@ -67,11 +67,11 @@ export default {
 	labelFG,
 	frequencyColor,
 	timeDomainColor,
+	speed,
 	spokes,
 	spread,
 	offset,
 	width,
-	speed,
 	min,
 	max,
 	flip,

@@ -7,21 +7,21 @@
 	/** @type {import('$/app').Preset} */
 	let presets = {
 		lite: {
+			speed: 0.5,
 			spokes: 768,
 			spread: 4,
-			speed: 0.5,
 		},
 		'sound bars': {
-			spokes: 200,
-			width: 2.4,
 			speed: 0.4,
+			spokes: 334,
+			width: 2.4,
 			min: 73.8,
 		},
 		clock: {
+			speed: 0.1,
 			spokes: 240,
 			spread: 20,
 			width: 3,
-			speed: 0.1,
 			min: 0,
 			max: 24,
 			flip: true,

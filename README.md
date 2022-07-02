@@ -1,3 +1,3 @@
-# dj-viz
+# DJ ViZ
 
-⚠️ Currently only supported on desktop Firefox.
+⚠️ Currently only fully supported on desktop Firefox.

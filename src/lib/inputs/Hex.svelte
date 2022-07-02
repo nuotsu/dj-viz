@@ -18,13 +18,14 @@
 	}
 
 	label:active hex {
-		text-decoration: underline;
-		text-decoration-style: dashed;
+		@apply focus;
 	}
 
 	hex {
 		display: grid;
 		grid-template-columns: repeat(7, 1ch);
+		border-radius: 0.25em;
+
 		@apply glow;
 	}
 

@@ -12,6 +12,14 @@
 
 	/** @type {import('$/app').Preset} */
 	let presets = {
+		'DJ ViZ': {
+			recordLabel: 'DJ\nViZ',
+			labelSize: 2,
+			labelBG: '#170d2d',
+			labelFG: '#ede4bd',
+			frequencyColor: '#ede4bd',
+			timeDomainColor: '#ede4bd',
+		},
 		'💩': {
 			recordLabel: '💩',
 			labelBG: '#6a431f',
@@ -58,16 +66,16 @@
 			labelFG: '#000000',
 		},
 		Supreme: {
-			recordLabel: '\n\nSupreme',
+			recordLabel: `Supreme\tSupreme\tSupreme\neme\tSupreme\tSupreme\tSu\n\tSupreme\tSupreme\tSupre`,
 			labelFont: fonts['sans-serif'],
-			labelSize: 1.7,
+			labelSize: 0.9,
 			labelBG: '#ed1c24',
 			labelFG: '#ffffff',
 		},
 		'SV.LTE Supra': {
 			recordLabel: 'SV.LTE\nSUPRA',
 			labelFont: fonts['compact'],
-			labelSize: 3.3,
+			labelSize: 3.4,
 			labelBG: '#000000',
 			labelFG: '#e9bd4b',
 			frequencyColor: '#e9bd4b',

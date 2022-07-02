@@ -39,6 +39,8 @@
 
 @layer utilities {
 	.focus {
+		position: relative;
+		z-index: 1;
 		outline: 1px dashed transparent;
 		outline-offset: 0;
 		animation: focus 0.2s ease-in-out forwards;
