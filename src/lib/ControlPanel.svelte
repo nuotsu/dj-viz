@@ -49,8 +49,7 @@
 </style>
 
 <script>
-	import { dev } from '$app/env'
 	import HotKey from './inputs/HotKey.svelte'
 
-	let open = dev
+	let open = true
 </script>
