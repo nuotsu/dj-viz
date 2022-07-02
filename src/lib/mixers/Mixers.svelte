@@ -1,10 +1,10 @@
 <nav>
 	<InputSet name="💿" disabled={!$record}>
+		<LabelColor/>
 		<Label/>
 	</InputSet>
 
 	<InputSet name="🎨" vertical disabled={!$record && !$sound}>
-		<LabelColor/>
 		<FrequencyColor/>
 		<TimeDomainColor/>
 	</InputSet>

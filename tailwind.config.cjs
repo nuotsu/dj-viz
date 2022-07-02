@@ -3,6 +3,10 @@ module.exports = {
 	content: ['./src/**/*.{html,svelte}'],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: "'Abel', sans-serif",
+				handwritten: "'Rock Salt', monospace",
+			},
 			colors: {
 				error: 'red',
 			},

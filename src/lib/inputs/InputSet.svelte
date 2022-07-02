@@ -15,7 +15,7 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 1ch;
-		padding: 0 1ch;
+		padding: 0 1ch 1ch;
 		border: 1px solid #fff2;
 	}
 

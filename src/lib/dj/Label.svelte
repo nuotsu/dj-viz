@@ -1,6 +1,9 @@
 <!-- svelte-ignore a11y-structure -->
 
-<figcaption style:background-color={$labelColor}>
+<figcaption
+	style:background-color={$labelColor}
+	style:color={$labelColor === '#ffffff' ? '#000' : '#fff'}
+>
 	<pre>{@html $recordLabel.replace(/\n/g,'<br>')}</pre>
 </figcaption>
 
@@ -26,6 +29,10 @@
 		background: #000;
 
 		@apply center;
+	}
+
+	pre {
+		@apply font-handwritten;
 	}
 </style>
 
