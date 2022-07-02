@@ -13,6 +13,9 @@
 		position: sticky;
 		z-index: 1;
 		bottom: 0;
+		max-height: 100vh;
+
+		@apply <md:overflow-y-auto;
 	}
 
 	summary {

@@ -1,7 +1,7 @@
 <fieldset {disabled}>
 	<legend>
 		{name}
-		<slot name="preset"></slot>
+		<slot name="legend"></slot>
 	</legend>
 
 	<div class:vertical style:gap>
@@ -34,6 +34,9 @@
 
 	div {
 		display: flex;
+		flex-wrap: wrap;
+
+		@apply <md:justify-center;
 	}
 
 	.vertical {

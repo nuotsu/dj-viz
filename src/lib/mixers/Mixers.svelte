@@ -1,10 +1,10 @@
 <nav>
 	<InputSet name="💿" gap="1ch" disabled={!$record}>
+		<LabelFont slot="legend" />
 		<div>
 			<LabelColor/>
 			<Label/>
 		</div>
-
 		<LabelSize/>
 	</InputSet>
 
@@ -14,7 +14,7 @@
 	</InputSet>
 
 	<InputSet name="🎧" disabled={!$record && !$sound}>
-		<SoundPresets slot="preset" />
+		<SoundPresets slot="legend" />
 		<Spokes/>
 		<Spread/>
 		<Offset/>
@@ -25,7 +25,7 @@
 	</InputSet>
 
 	<InputSet name="📹" disabled={!$camera}>
-		<CameraPresets slot="preset" />
+		<CameraPresets slot="legend" />
 		<Opacity/>
 		<Saturation/>
 		<Invert/>
@@ -50,6 +50,7 @@
 
 	import Label from './record/Label.svelte'
 	import LabelColor from './record/LabelColor.svelte'
+	import LabelFont from './record/LabelFont.svelte'
 	import LabelSize from './record/LabelSize.svelte'
 
 	import FrequencyColor from './color/FrequencyColor.svelte'

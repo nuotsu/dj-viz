@@ -5,7 +5,7 @@
 	style:color={$labelColor === '#ffffff' ? '#000' : '#fff'}
 	style:font-size="{$labelSize}em"
 >
-	<pre>{@html $recordLabel.replace(/\n/g,'<br>')}</pre>
+	<pre style:font-family={$labelFont}>{@html $recordLabel.replace(/\n/g,'<br>')}</pre>
 </figcaption>
 
 <style>
@@ -31,14 +31,11 @@
 
 		@apply center;
 	}
-
-	pre {
-		@apply font-handwritten;
-	}
 </style>
 
 <script>
 	import { recordLabel } from '$lib/mixers/record/Label.svelte'
 	import { labelColor } from '$lib/mixers/record/LabelColor.svelte'
+	import { labelFont } from '$lib/mixers/record/LabelFont.svelte'
 	import { labelSize } from '$lib/mixers/record/LabelSize.svelte'
 </script>

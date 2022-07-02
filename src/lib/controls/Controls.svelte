@@ -12,7 +12,8 @@
 		justify-content: center;
 		gap: 0.5rem;
 		font-size: 2rem;
-		margin-top: -0.5em;
+
+		@apply md:mt-[-0.5em];
 	}
 </style>
 
