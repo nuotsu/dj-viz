@@ -1,4 +1,4 @@
-<Knob title="offset" key="-"
+<Knob label="offset" key="-"
 	bind:value={$offset}
 	min={1} max={SPOKES_MAX}
 	factor={0.2}

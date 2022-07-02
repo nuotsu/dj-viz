@@ -25,6 +25,7 @@
 	hex {
 		display: grid;
 		grid-template-columns: repeat(7, 1ch);
+		filter: drop-shadow(0 0 1ch currentColor);
 	}
 
 	char {

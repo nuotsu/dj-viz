@@ -1,10 +1,10 @@
-<Knob title={$flip ? 'outer' : 'inner'}
+<Knob label={$flip ? 'outer' : 'inner'}
 	bind:value={$min}
 	min={0} max={100}
 	key="["
 />
 
-<Knob title={$flip ? 'inner' : 'outer'}
+<Knob label={$flip ? 'inner' : 'outer'}
 	bind:value={$max}
 	min={1} max={100}
 	key="]"

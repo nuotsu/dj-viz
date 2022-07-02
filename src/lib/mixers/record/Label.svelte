@@ -5,7 +5,7 @@
 		class="focus:focus"
 		placeholder="label"
 		bind:value={$recordLabel}
-		rows={4}
+		rows={3}
 		spellcheck="false"
 	/>
 </label>

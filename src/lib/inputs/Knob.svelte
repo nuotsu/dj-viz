@@ -20,7 +20,9 @@
 		</output>
 	</knob>
 
-	<span>{title}</span>
+	{#key label}
+		<span>{label}</span>
+	{/key}
 </label>
 
 <style>
@@ -48,9 +50,10 @@
 		aspect-ratio: 1;
 		width: var(--input-size);
 		margin: auto;
-		border: 1px solid;
+		border: 1px solid #fff4;
 		border-radius: 100%;
 		overflow: hidden;
+		filter: drop-shadow(0 0 1ch currentColor);
 	}
 
 	indicator {
@@ -86,13 +89,24 @@
 			currentColor 62%
 		);
 	}
+
+	span {
+		display: inline-block;
+		animation: update 0.2s ease-in-out forwards;
+	}
+
+	@keyframes update {
+		from {
+			transform: scaleX(-1);
+		}
+	}
 </style>
 
 <script>
 	import HotKey from './HotKey.svelte'
 	import { nerdMode } from '$$/controls/NerdMode.svelte'
 
-	export let title, key, value, min, max, invalid
+	export let label, key, value, min, max, invalid
 	export let step = 1, factor = null, toFixed = 1
 
 	let input

@@ -6,6 +6,12 @@
 	{label}
 </label>
 
+<style>
+	label {
+		@apply transition-opacity;
+	}
+</style>
+
 <script>
 	import HotKey from '$lib/inputs/HotKey.svelte'
 

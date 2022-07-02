@@ -1,4 +1,4 @@
-<Knob title="opacity" key="o"
+<Knob label="opacity" key="o"
 	bind:value={$opacity}
 	min={0.1} max={1} step={0.1}
 />
