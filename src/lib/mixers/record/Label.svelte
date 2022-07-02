@@ -27,7 +27,7 @@
 </style>
 
 <script context="module">
-	import { labelColor } from '../color/LabelColor.svelte'
+	import { labelColor } from './LabelColor.svelte'
 	import { writable } from 'svelte/store'
 
 	export const recordLabel = writable('')

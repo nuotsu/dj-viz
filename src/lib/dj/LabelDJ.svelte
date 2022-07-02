@@ -3,6 +3,7 @@
 <figcaption
 	style:background-color={$labelColor}
 	style:color={$labelColor === '#ffffff' ? '#000' : '#fff'}
+	style:font-size="{$labelSize}em"
 >
 	<pre>{@html $recordLabel.replace(/\n/g,'<br>')}</pre>
 </figcaption>
@@ -15,15 +16,15 @@
 		width: calc(var(--disc-size) / 3);
 		padding: 1em;
 		border-radius: 100%;
-		overflow: hidden;
 		opacity: 0.8;
+		overflow: hidden;
 	}
 
 	figcaption::before {
 		content: '';
 		display: block;
 		aspect-ratio: 1;
-		width: 1em;
+		width: calc(var(--disc-size) / 3 / 10);
 		box-shadow: 0 0 0 1px #fff8;
 		border-radius: 100%;
 		background: #000;
@@ -38,5 +39,6 @@
 
 <script>
 	import { recordLabel } from '$lib/mixers/record/Label.svelte'
-	import { labelColor } from '$lib/mixers/color/LabelColor.svelte'
+	import { labelColor } from '$lib/mixers/record/LabelColor.svelte'
+	import { labelSize } from '$lib/mixers/record/LabelSize.svelte'
 </script>

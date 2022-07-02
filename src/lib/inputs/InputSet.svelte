@@ -4,7 +4,7 @@
 		<slot name="preset"></slot>
 	</legend>
 
-	<div class:vertical>
+	<div class:vertical style:gap>
 		<slot></slot>
 	</div>
 </fieldset>
@@ -32,6 +32,10 @@
 		margin-bottom: 0.5ch;
 	}
 
+	div {
+		display: flex;
+	}
+
 	.vertical {
 		display: flex;
 		flex-direction: column;
@@ -39,5 +43,5 @@
 </style>
 
 <script>
-	export let name, vertical, disabled
+	export let name, vertical, disabled, gap = '0.5ch'
 </script>

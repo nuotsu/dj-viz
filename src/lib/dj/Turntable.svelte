@@ -5,7 +5,7 @@
 	on:wheel={onWheel}
 >
 	{#if $record}
-		<Record />
+		<RecordDJ />
 	{/if}
 
 	<input type="range" hidden
@@ -49,7 +49,7 @@
 
 <script context="module">
 	import { record } from '$lib/controls/Record.svelte'
-	import Record from './Record.svelte'
+	import RecordDJ from './RecordDJ.svelte'
 	import { writable } from 'svelte/store'
 
 	export const discValue = writable(0)

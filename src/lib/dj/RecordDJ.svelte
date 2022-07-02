@@ -1,6 +1,6 @@
 <figure>
 	{#if $recordLabel}
-		<RecordLabel/>
+		<LabelDJ/>
 	{/if}
 </figure>
 
@@ -50,5 +50,5 @@
 
 <script>
 	import { recordLabel } from '$lib/mixers/record/Label.svelte'
-	import RecordLabel from './Label.svelte'
+	import LabelDJ from './LabelDJ.svelte'
 </script>

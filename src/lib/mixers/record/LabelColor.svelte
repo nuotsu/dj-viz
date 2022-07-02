@@ -1,4 +1,4 @@
-<Hex label="label" bind:value={$labelColor} />
+<Hex label="Record label" bind:value={$labelColor} />
 
 <script context="module">
 	import Hex from '$$/inputs/Hex.svelte'

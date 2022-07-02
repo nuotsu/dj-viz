@@ -1,7 +1,11 @@
 <nav>
-	<InputSet name="💿" disabled={!$record}>
-		<LabelColor/>
-		<Label/>
+	<InputSet name="💿" gap="1ch" disabled={!$record}>
+		<div>
+			<LabelColor/>
+			<Label/>
+		</div>
+
+		<LabelSize/>
 	</InputSet>
 
 	<InputSet name="🎨" vertical disabled={!$record && !$sound}>
@@ -45,7 +49,9 @@
 	import InputSet from '$$/inputs/InputSet.svelte'
 
 	import Label from './record/Label.svelte'
-	import LabelColor from './color/LabelColor.svelte'
+	import LabelColor from './record/LabelColor.svelte'
+	import LabelSize from './record/LabelSize.svelte'
+
 	import FrequencyColor from './color/FrequencyColor.svelte'
 	import TimeDomainColor from './color/TimeDomainColor.svelte'
 
