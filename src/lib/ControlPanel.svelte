@@ -21,6 +21,9 @@
 		left: 0;
 		bottom: 0;
 		padding: 0.5rem;
+		outline: none;
+
+		@apply transition-all focus:glow;
 	}
 
 	details:not([open]) summary:not(:is(:hover, :focus)) {
@@ -30,10 +33,7 @@
 	details[open] div {
 		padding-bottom: 1ch;
 		border-top: 1px solid #fff2;
-		background-image: linear-gradient(to bottom right,
-			#fff1,
-			#fff2
-		);
+		background-color: #5554;
 		backdrop-filter: blur(5px);
 		animation: appear 0.2s ease-in-out forwards;
 	}

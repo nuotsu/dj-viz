@@ -8,7 +8,9 @@
 
 <style>
 	label {
-		@apply transition-opacity;
+		user-select: none;
+
+		@apply transition-all;
 	}
 </style>
 

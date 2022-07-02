@@ -51,15 +51,18 @@
 		}
 	}
 
+	.glow { filter: drop-shadow(0 0 1ch currentColor) }
+	.glow-sm { filter: drop-shadow(0 0 0.5ch currentColor) }
+
+	.off {
+		opacity: 0.5;
+		filter: grayscale();
+	}
+
 	.center {
 		position: absolute;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
-	}
-
-	.off {
-		opacity: 0.5;
-		filter: grayscale();
 	}
 }

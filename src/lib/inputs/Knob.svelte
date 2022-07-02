@@ -27,6 +27,7 @@
 
 <style>
 	label {
+		user-select: none;
 		display: inline-block;
 		text-align: center;
 	}
@@ -53,7 +54,8 @@
 		border: 1px solid #fff4;
 		border-radius: 100%;
 		overflow: hidden;
-		filter: drop-shadow(0 0 1ch currentColor);
+
+		@apply glow;
 	}
 
 	indicator {

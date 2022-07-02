@@ -16,8 +16,15 @@
 		text-align: center;
 	}
 
+	select {
+		@apply transition-all;
+	}
+
 	label:focus-within select {
-		@apply focus;
+		background-color: #fff2;
+		outline: none;
+
+		@apply glow-sm;
 	}
 </style>
 

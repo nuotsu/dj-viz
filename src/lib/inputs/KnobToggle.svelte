@@ -14,6 +14,7 @@
 
 <style>
 	label {
+		user-select: none;
 		display: inline-block;
 		text-align: center;
 	}
@@ -33,9 +34,11 @@
 	input:checked + toggle::before {
 		content: '';
 		position: absolute;
-		inset: 0.5em;
+		inset: 0.75em;
 		border-radius: 100%;
 		background-color: currentColor;
+
+		@apply glow-sm;
 	}
 
 	output {
