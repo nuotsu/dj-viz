@@ -7,6 +7,7 @@ import { min, max, DEFAULT_MIN, DEFAULT_MAX } from './sound/Radii.svelte'
 import { flip, DEFAULT_FLIP } from './sound/Flip.svelte'
 import { opacity, DEFAULT_OPACITY } from './camera/Opacity.svelte'
 import { saturation, DEFAULT_SATURATION } from './camera/Saturation.svelte'
+import { hueRotate, DEFAULT_HUE_ROTATE } from './camera/HueRotate.svelte'
 import { invert, DEFAULT_INVERT } from './camera/Invert.svelte'
 import { mirror, DEFAULT_MIRROR } from './camera/Mirror.svelte'
 
@@ -24,6 +25,7 @@ const SOUND_DEFAULTS = {
 const CAMERA_DEFAULTS = {
 	opacity: DEFAULT_OPACITY,
 	saturation: DEFAULT_SATURATION,
+	hueRotate: DEFAULT_HUE_ROTATE,
 	invert: DEFAULT_INVERT,
 	mirror: DEFAULT_MIRROR,
 }

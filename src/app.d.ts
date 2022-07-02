@@ -24,6 +24,7 @@ export interface Preset {
 		// camera
 		opacity?: number
 		saturation?: number
+		hueRotate?: number
 		invert?: boolean
 		mirror?: boolean
 	}

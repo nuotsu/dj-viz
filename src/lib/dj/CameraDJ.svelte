@@ -2,7 +2,7 @@
 	<video autoplay
 		use:srcObject={stream}
 		style:opacity={$opacity}
-		style:filter="saturate({$saturation}) invert({$invert ? 1 : 0})"
+		style:filter="hue-rotate({$hueRotate}turn) saturate({$saturation}) invert({$invert ? 1 : 0})"
 	>
 		<track kind="captions" />
 	</video>
@@ -32,6 +32,7 @@
 <script>
 	import { opacity } from '$$/mixers/camera/Opacity.svelte'
 	import { saturation } from '$$/mixers/camera/Saturation.svelte'
+	import { hueRotate } from '$$/mixers/camera/HueRotate.svelte'
 	import { mirror } from '$$/mixers/camera/Mirror.svelte'
 	import { invert } from '$$/mixers/camera/Invert.svelte'
 

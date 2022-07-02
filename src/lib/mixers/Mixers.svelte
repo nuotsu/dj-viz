@@ -28,6 +28,7 @@
 		<CameraPresets slot="legend" />
 		<Opacity/>
 		<Saturation/>
+		<HueRotate/>
 		<Invert/>
 		<Mirror/>
 	</InputSet>
@@ -68,6 +69,7 @@
 	import CameraPresets from '$$/presets/CameraPresets.svelte'
 	import Opacity from './camera/Opacity.svelte'
 	import Saturation from './camera/Saturation.svelte'
+	import HueRotate from './camera/HueRotate.svelte'
 	import Invert from './camera/Invert.svelte'
 	import Mirror from './camera/Mirror.svelte'
 </script>
