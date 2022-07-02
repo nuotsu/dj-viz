@@ -11,6 +11,16 @@ declare namespace App {
 
 export interface Preset {
 	[key: string]: {
+		// label
+		recordLabel: string
+		labelFont: string
+		labelSize: string
+
+		// color
+		labelColor: string
+		frequencyColor: string
+		timeDomainColor: string
+
 		// sound
 		spokes?: number
 		spread?: number

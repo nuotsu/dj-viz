@@ -1,14 +1,15 @@
 <nav>
 	<InputSet name="💿" gap="1ch" disabled={!$record}>
-		<LabelFont slot="legend" />
+		<LabelPresets slot="legend" />
 		<div>
-			<LabelColor/>
+			<LabelFont />
 			<Label/>
 		</div>
 		<LabelSize/>
 	</InputSet>
 
 	<InputSet name="🎨" vertical disabled={!$record && !$sound}>
+		<LabelColor/>
 		<FrequencyColor/>
 		<TimeDomainColor/>
 	</InputSet>
@@ -49,8 +50,9 @@
 	import { camera } from '$$/controls/Camera.svelte'
 	import InputSet from '$$/inputs/InputSet.svelte'
 
+	import LabelPresets from '$$/presets/LabelPresets.svelte'
 	import Label from './record/Label.svelte'
-	import LabelColor from './record/LabelColor.svelte'
+	import LabelColor from './color/LabelColor.svelte'
 	import LabelFont from './record/LabelFont.svelte'
 	import LabelSize from './record/LabelSize.svelte'
 

@@ -1,3 +1,9 @@
+import { recordLabel, DEFAULT_LABEL } from './record/Label.svelte'
+import { labelFont, DEFAULT_LABEL_FONT } from './record/LabelFont.svelte'
+import { labelSize, DEFAULT_LABEL_SIZE } from './record/LabelSize.svelte'
+import { labelColor, DEFAULT_LABEL_COLOR } from './color/LabelColor.svelte'
+import { frequencyColor, DEFAULT_FREQUENCY_COLOR } from './color/FrequencyColor.svelte'
+import { timeDomainColor, DEFAULT_TIME_DOMAIN_COLOR } from './color/TimeDomainColor.svelte'
 import { spokes, DEFAULT_SPOKES } from './sound/Spokes.svelte'
 import { spread, DEFAULT_SPREAD } from './sound/Spread.svelte'
 import { offset, DEFAULT_OFFSET } from './sound/Offset.svelte'
@@ -10,6 +16,18 @@ import { saturation, DEFAULT_SATURATION } from './camera/Saturation.svelte'
 import { hueRotate, DEFAULT_HUE_ROTATE } from './camera/HueRotate.svelte'
 import { invert, DEFAULT_INVERT } from './camera/Invert.svelte'
 import { mirror, DEFAULT_MIRROR } from './camera/Mirror.svelte'
+
+const LABEL_PRESETS = {
+	recordLabel: DEFAULT_LABEL,
+	labelFont: DEFAULT_LABEL_FONT,
+	labelSize: DEFAULT_LABEL_SIZE,
+}
+
+const COLOR_PRESETS = {
+	labelColor: DEFAULT_LABEL_COLOR,
+	frequencyColor: DEFAULT_FREQUENCY_COLOR,
+	timeDomainColor: DEFAULT_TIME_DOMAIN_COLOR,
+}
 
 const SOUND_DEFAULTS = {
 	spokes: DEFAULT_SPOKES,
@@ -31,11 +49,19 @@ const CAMERA_DEFAULTS = {
 }
 
 export {
+	LABEL_PRESETS,
+	COLOR_PRESETS,
 	SOUND_DEFAULTS,
 	CAMERA_DEFAULTS,
 }
 
 export default {
+	recordLabel,
+	labelFont,
+	labelSize,
+	labelColor,
+	frequencyColor,
+	timeDomainColor,
 	spokes,
 	spread,
 	offset,

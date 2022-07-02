@@ -35,7 +35,7 @@
 
 <script>
 	import { recordLabel } from '$lib/mixers/record/Label.svelte'
-	import { labelColor } from '$lib/mixers/record/LabelColor.svelte'
+	import { labelColor } from '$lib/mixers/color/LabelColor.svelte'
 	import { labelFont } from '$lib/mixers/record/LabelFont.svelte'
 	import { labelSize } from '$lib/mixers/record/LabelSize.svelte'
 </script>

@@ -2,7 +2,7 @@
 
 <script>
 	import Preset from './Preset.svelte'
-	import { CAMERA_DEFAULTS } from '$lib/mixers/mixers'
+	import { CAMERA_DEFAULTS } from '$$/mixers/mixers'
 
 	/** @type {import('$/app').Preset} */
 	let presets = {

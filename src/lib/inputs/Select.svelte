@@ -1,6 +1,8 @@
 <HotKey {key} callback={() => select.focus()} />
 
 <label>
+	{#if label}{label}{/if}
+
 	<select bind:this={select} bind:value on:change>
 		<slot></slot>
 	</select>
@@ -8,8 +10,8 @@
 
 <style>
 	label {
-		display: block;
-		text-align: center;
+		display: grid;
+		grid-template-columns: 1fr auto;
 	}
 
 	select {
@@ -27,7 +29,7 @@
 <script>
 	import HotKey from './HotKey.svelte'
 
-	export let key, value
+	export let label, key, value
 
 	let select
 </script>

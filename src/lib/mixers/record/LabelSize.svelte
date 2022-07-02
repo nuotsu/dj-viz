@@ -7,5 +7,6 @@
 	import Knob from '$$/inputs/Knob.svelte'
 	import { writable } from 'svelte/store'
 
-	export const labelSize = writable(1)
+	export const DEFAULT_LABEL_SIZE = 1
+	export const labelSize = writable(DEFAULT_LABEL_SIZE)
 </script>

@@ -26,9 +26,10 @@
 </style>
 
 <script context="module">
-	import { labelColor } from './LabelColor.svelte'
+	import { labelColor } from '../color/LabelColor.svelte'
 	import { labelFont } from './LabelFont.svelte'
 	import { writable } from 'svelte/store'
 
-	export const recordLabel = writable('')
+	export const DEFAULT_LABEL = ''
+	export const recordLabel = writable()
 </script>
