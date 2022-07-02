@@ -8,12 +8,12 @@
 
 <script>
 	import Select from '$$/inputs/Select.svelte'
-	import mixers, { DEFAULTS } from '$$/mixers/mixers'
+	import mixers from '$$/mixers/mixers'
 
-	export let key, presets
+	export let key, presets, defaults
 
 	const generateValues = values => JSON.stringify({
-		...DEFAULTS,
+		...defaults,
 		...values
 	})
 

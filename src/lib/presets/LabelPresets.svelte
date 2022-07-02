@@ -1,8 +1,14 @@
-<Preset {presets} key="π" />
+<Preset {presets} {defaults} key="π" />
 
 <script>
 	import Preset from './Preset.svelte'
+	import { LABEL_DEFAULTS, COLOR_DEFAULTS } from '$lib/mixers/mixers'
 	import { fonts } from '$lib/mixers/record/LabelFont.svelte'
+
+	const defaults = {
+		...LABEL_DEFAULTS,
+		...COLOR_DEFAULTS,
+	}
 
 	/** @type {import('$/app').Preset} */
 	let presets = {
@@ -12,7 +18,13 @@
 			labelSize: 5.0,
 			frequencyColor: '#6a431f',
 			timeDomainColor: '#6a431f',
-			speed: 10,
+		},
+		'Q-ting Star': {
+			recordLabel: 'Q-ting\n         Star⭐️',
+			labelSize: 1.2,
+			labelBG: '#d84be0',
+			labelFG: '#e7e67e',
+			frequencyColor: '#e7e67e',
 		},
 		'Shohei Ohtani': {
 			recordLabel: 'OHTANI\n    17',
@@ -22,6 +34,12 @@
 			labelFG: '#c7103f',
 			frequencyColor: '#8b0027',
 			timeDomainColor: '#156ec5',
+		},
+		'Starbucks': {
+			recordLabel: 'STARBUCKS\n\n   COFFEE',
+			labelFont: fonts['sans-serif'],
+			labelBG: '#017352',
+			labelFG: '#ffffff',
 		},
 		'Stranger Things': {
 			recordLabel: 'STRANGER\n   THINGS',
