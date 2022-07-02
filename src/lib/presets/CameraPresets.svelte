@@ -1,8 +1,7 @@
-<Preset {presets} defaults={CAMERA_DEFAULTS} key="P" />
+<Preset {presets} key="P" />
 
 <script>
 	import Preset from './Preset.svelte'
-	import { CAMERA_DEFAULTS } from '$$/mixers/mixers'
 
 	/** @type {import('$/app').Preset} */
 	let presets = {

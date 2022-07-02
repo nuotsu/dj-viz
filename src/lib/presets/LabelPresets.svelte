@@ -1,16 +1,19 @@
-<Preset {presets} {defaults} key="π" />
+<Preset {presets} key="π" />
 
 <script>
 	import Preset from './Preset.svelte'
-	import { LABEL_PRESETS, COLOR_PRESETS } from '$$/mixers/mixers'
 	import { fonts } from '$lib/mixers/record/LabelFont.svelte'
 
-	let defaults = {
-		...LABEL_PRESETS,
-		...COLOR_PRESETS,
-	}
-
+	/** @type {import('$/app').Preset} */
 	let presets = {
+		'💩': {
+			recordLabel: '💩',
+			labelBG: '#6a431f',
+			labelSize: 5.0,
+			frequencyColor: '#6a431f',
+			timeDomainColor: '#6a431f',
+			speed: 10,
+		},
 		'Shohei Ohtani': {
 			recordLabel: 'OHTANI\n    17',
 			labelFont: fonts['compact'],
@@ -51,6 +54,14 @@
 			labelFG: '#e9bd4b',
 			frequencyColor: '#e9bd4b',
 			timeDomainColor: '#e9bd4b',
+		},
+		'zoom': {
+			recordLabel: '\n\nzoom',
+			labelFont: fonts['sans-serif'],
+			labelSize: 1.7,
+			labelBG: '#2c88f7',
+			labelFG: '#ffffff',
+			timeDomainColor: '#2c88f7',
 		},
 	}
 </script>

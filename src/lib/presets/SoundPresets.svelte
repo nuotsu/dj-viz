@@ -1,8 +1,7 @@
-<Preset {presets} defaults={SOUND_DEFAULTS} key="p" />
+<Preset {presets} key="p" />
 
 <script>
 	import Preset from './Preset.svelte'
-	import { SOUND_DEFAULTS } from '$$/mixers/mixers'
 
 	/** @type {import('$/app').Preset} */
 	let presets = {

@@ -8,3 +8,37 @@ declare namespace App {
 	// interface Session {}
 	// interface Stuff {}
 }
+
+export interface Mixer {
+	// label
+	recordLabel: string
+	labelFont: string
+	labelSize: string
+
+	// color
+	labelBG: string
+	labelFG: string
+	frequencyColor: string
+	timeDomainColor: string
+
+	// sound
+	spokes?: number
+	spread?: number
+	offset?: number
+	width?: number
+	speed?: number
+	min?: number
+	max?: number
+	flip?: boolean
+
+	// camera
+	opacity?: number
+	saturation?: number
+	hueRotate?: number
+	invert?: boolean
+	mirror?: boolean
+}
+
+export interface Preset {
+	[key: string]: Mixer
+}

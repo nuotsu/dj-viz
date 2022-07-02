@@ -18,20 +18,17 @@ import { hueRotate, DEFAULT_HUE_ROTATE } from './camera/HueRotate.svelte'
 import { invert, DEFAULT_INVERT } from './camera/Invert.svelte'
 import { mirror, DEFAULT_MIRROR } from './camera/Mirror.svelte'
 
-const LABEL_PRESETS = {
+/** @type {import('$/app').Mixer} */
+export const DEFAULTS = {
 	recordLabel: DEFAULT_LABEL,
 	labelFont: DEFAULT_LABEL_FONT,
 	labelSize: DEFAULT_LABEL_SIZE,
-}
 
-const COLOR_PRESETS = {
 	labelBG: DEFAULT_LABEL_BG,
 	labelFG: DEFAULT_LABEL_FG,
 	frequencyColor: DEFAULT_FREQUENCY_COLOR,
 	timeDomainColor: DEFAULT_TIME_DOMAIN_COLOR,
-}
 
-const SOUND_DEFAULTS = {
 	spokes: DEFAULT_SPOKES,
 	spread: DEFAULT_SPREAD,
 	offset: DEFAULT_OFFSET,
@@ -40,21 +37,12 @@ const SOUND_DEFAULTS = {
 	min: DEFAULT_MIN,
 	max: DEFAULT_MAX,
 	flip: DEFAULT_FLIP,
-}
 
-const CAMERA_DEFAULTS = {
 	opacity: DEFAULT_OPACITY,
 	saturation: DEFAULT_SATURATION,
 	hueRotate: DEFAULT_HUE_ROTATE,
 	invert: DEFAULT_INVERT,
 	mirror: DEFAULT_MIRROR,
-}
-
-export {
-	LABEL_PRESETS,
-	COLOR_PRESETS,
-	SOUND_DEFAULTS,
-	CAMERA_DEFAULTS,
 }
 
 export default {
