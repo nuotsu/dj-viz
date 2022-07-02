@@ -6,6 +6,6 @@
 
 	/** @type {import('$/app').Preset} */
 	let presets = {
-		webcam: { opacity: 1, saturation: 1, },
+		webcam: { opacity: 1, saturation: 1, hueRotate: 0 },
 	}
 </script>

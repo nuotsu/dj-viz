@@ -46,6 +46,7 @@ export default {
 	flip,
 	opacity,
 	saturation,
+	hueRotate,
 	invert,
 	mirror,
 }
