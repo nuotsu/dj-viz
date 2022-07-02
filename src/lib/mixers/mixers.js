@@ -1,7 +1,8 @@
 import { recordLabel, DEFAULT_LABEL } from './record/Label.svelte'
 import { labelFont, DEFAULT_LABEL_FONT } from './record/LabelFont.svelte'
 import { labelSize, DEFAULT_LABEL_SIZE } from './record/LabelSize.svelte'
-import { labelColor, DEFAULT_LABEL_COLOR } from './color/LabelColor.svelte'
+import { labelBG, DEFAULT_LABEL_BG } from './color/LabelBG.svelte'
+import { labelFG, DEFAULT_LABEL_FG } from './color/LabelFG.svelte'
 import { frequencyColor, DEFAULT_FREQUENCY_COLOR } from './color/FrequencyColor.svelte'
 import { timeDomainColor, DEFAULT_TIME_DOMAIN_COLOR } from './color/TimeDomainColor.svelte'
 import { spokes, DEFAULT_SPOKES } from './sound/Spokes.svelte'
@@ -24,7 +25,8 @@ const LABEL_PRESETS = {
 }
 
 const COLOR_PRESETS = {
-	labelColor: DEFAULT_LABEL_COLOR,
+	labelBG: DEFAULT_LABEL_BG,
+	labelFG: DEFAULT_LABEL_FG,
 	frequencyColor: DEFAULT_FREQUENCY_COLOR,
 	timeDomainColor: DEFAULT_TIME_DOMAIN_COLOR,
 }
@@ -59,7 +61,8 @@ export default {
 	recordLabel,
 	labelFont,
 	labelSize,
-	labelColor,
+	labelBG,
+	labelFG,
 	frequencyColor,
 	timeDomainColor,
 	spokes,

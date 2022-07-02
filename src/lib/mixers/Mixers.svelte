@@ -8,8 +8,9 @@
 		<LabelSize/>
 	</InputSet>
 
-	<InputSet name="🎨" vertical disabled={!$record && !$sound}>
-		<LabelColor/>
+	<InputSet name="🎨" gap="0 0.5ch" vertical disabled={!$record && !$sound}>
+		<LabelBG/>
+		<LabelFG/>
 		<FrequencyColor/>
 		<TimeDomainColor/>
 	</InputSet>
@@ -52,7 +53,8 @@
 
 	import LabelPresets from '$$/presets/LabelPresets.svelte'
 	import Label from './record/Label.svelte'
-	import LabelColor from './color/LabelColor.svelte'
+	import LabelBG from './color/LabelBG.svelte'
+	import LabelFG from './color/LabelFG.svelte'
 	import LabelFont from './record/LabelFont.svelte'
 	import LabelSize from './record/LabelSize.svelte'
 

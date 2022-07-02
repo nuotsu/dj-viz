@@ -1,8 +1,8 @@
 <!-- svelte-ignore a11y-structure -->
 
 <figcaption
-	style:background-color={$labelColor}
-	style:color={$labelColor === '#ffffff' ? '#000' : '#fff'}
+	style:background-color={$labelBG}
+	style:color={$labelFG}
 	style:font-size="{$labelSize}em"
 >
 	<pre style:font-family={$labelFont}>{@html $recordLabel.replace(/\n/g,'<br>')}</pre>
@@ -35,7 +35,8 @@
 
 <script>
 	import { recordLabel } from '$lib/mixers/record/Label.svelte'
-	import { labelColor } from '$lib/mixers/color/LabelColor.svelte'
+	import { labelBG } from '$lib/mixers/color/LabelBG.svelte'
+	import { labelFG } from '$lib/mixers/color/LabelFG.svelte'
 	import { labelFont } from '$lib/mixers/record/LabelFont.svelte'
 	import { labelSize } from '$lib/mixers/record/LabelSize.svelte'
 </script>

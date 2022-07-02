@@ -25,7 +25,7 @@
 		place-content: center;
 		aspect-ratio: 1;
 		width: var(--input-size);
-		border: 1px solid;
+		border: 1px solid #fff4;
 		border-radius: 100%;
 		overflow: hidden;
 		padding: 15%;

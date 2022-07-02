@@ -1,7 +1,7 @@
 <label>
 	<textarea
-		style:background-color={$labelColor}
-		style:color={$labelColor === '#ffffff' ? '#000' : '#fff'}
+		style:background-color={$labelBG}
+		style:color={$labelFG}
 		style:font-family={$labelFont}
 		class="focus:focus"
 		placeholder="label"
@@ -26,7 +26,8 @@
 </style>
 
 <script context="module">
-	import { labelColor } from '../color/LabelColor.svelte'
+	import { labelBG } from '../color/LabelBG.svelte'
+	import { labelFG } from '../color/LabelFG.svelte'
 	import { labelFont } from './LabelFont.svelte'
 	import { writable } from 'svelte/store'
 
